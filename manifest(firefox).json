@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Materia Tab",
+  "version": "0.1",
+  "description": "A simple, clean new tab page with Material Design 3.",
+  "permissions": ["storage", "search"],
+  "host_permissions": [
+    "https://www.google.com/*",
+    "https://*.bing.com/*",
+    "https://www.baidu.com/*",
+    "https://duckduckgo.com/*",
+    "https://yandex.com/*",
+    "https://*.wikipedia.org/*"
+  ],
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "icons": {
+    "16": "favicon/icon16.png",
+    "48": "favicon/icon48.png",
+    "128": "favicon/icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "favicon/icon16.png",
+      "48": "favicon/icon48.png",
+      "128": "favicon/icon128.png"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; img-src 'self' data: blob: https:;"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{c30c387e-cd01-42b4-b5c7-6af2d820535b}",
+      "strict_min_version": "109.0"
+    }
+  },
+  "incognito": "spanning"
+}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>新标签页</title>
+	<link href="style.css" rel="stylesheet">
+
+	<link rel="icon" type="image/svg+xml" href="favicon/icon.svg">
+	<link rel="alternate icon" type="image/png" href="favicon/icon48.png">
+	<link rel="apple-touch-icon" href="favicon/icon128.png">
+
+	<!-- 字体资源 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
+
+	<!-- 预设搜索引擎预连接 (硬编码以提升冷启动速度) -->
+	<link rel="preconnect" href="https://www.google.com">
+	<link rel="preconnect" href="https://www.bing.com">
+	<link rel="preconnect" href="https://cn.bing.com">
+	<link rel="preconnect" href="https://www.baidu.com">
+	<link rel="preconnect" href="https://duckduckgo.com">
+	<link rel="preconnect" href="https://yandex.com">
+	<link rel="preconnect" href="https://zh.wikipedia.org">
+	<link rel="preconnect" href="https://en.wikipedia.org">
+
+	<script defer src="scripts/script.js"></script>
+</head>
+
+<body>
+	<!-- 背景层 -->
+	<div id="wallpaper-layer"></div>
+	<div id="wallpaper-overlay"></div>
+
+	<main class="main-container">
+		<!-- 搜索组件区域 -->
+		<div class="search-bar-wrapper">
+			<div class="search-bar-container" id="searchBarContainer">
+				<!-- 引擎选择按钮 -->
+				<div class="icon-btn-wrapper" id="engineSelectorBtn" tabindex="0" title="切换搜索引擎">
+					<div id="currentEngineIconContainer" class="icon-container">
+						<!-- 此处内容由 script.js 动态生成 -->
+					</div>
+				</div>
+
+				<!-- 搜索表单 -->
+				<form id="searchForm" autocomplete="off">
+					<input type="text" id="searchInput" autofocus>
+				</form>
+
+				<!-- 设置按钮 -->
+				<div class="icon-btn-wrapper" id="settingsBtn" tabindex="0" title="设置">
+					<svg class="md-icon" viewBox="0 0 24 24">
+						<path
+							d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+					</svg>
+				</div>
+			</div>
+
+			<!-- 引擎下拉菜单 -->
+			<div class="engine-dropdown" id="engineDropdown"></div>
+
+			<!-- 搜索建议列表 -->
+			<div class="search-suggestions" id="searchSuggestions"></div>
+		</div>
+	</main>
+
+	<!-- 设置模态框 -->
+	<dialog id="settingsDialog">
+		<div class="dialog-header">
+			<h2 data-i18n="settingsTitle">设置</h2>
+			<button class="icon-btn close-dialog-btn" id="closeSettingsBtn" title="关闭">
+				<svg class="md-icon" viewBox="0 0 24 24">
+					<path
+						d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+				</svg>
+			</button>
+		</div>
+
+		<div class="dialog-content">
+			<!-- 搜索引擎管理 -->
+			<div class="setting-section-title" data-i18n="secEngine">搜索引擎</div>
+			<div class="setting-card">
+				<div class="engine-list-container" id="engineList"></div>
+				<div class="setting-action-row" id="showAddEngineForm">
+					<div class="action-icon-bg">
+						<svg class="md-icon" viewBox="0 0 24 24">
+							<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+						</svg>
+					</div>
+					<span data-i18n="btnAddEngine">添加搜索引擎</span>
+				</div>
+			</div>
+
+			<!-- 外观设置 -->
+			<div class="setting-section-title" data-i18n="secAppearance">外观</div>
+			<div class="setting-card">
+				<!-- 语言选择 -->
+				<div class="setting-item">
+					<div class="setting-text">
+						<div class="setting-name" data-i18n="lblLang">语言</div>
+						<div class="setting-desc" data-i18n="descLang">界面显示语言</div>
+					</div>
+					<div class="custom-select-wrapper" id="langSelectWrapper" style="z-index: 20;">
+						<div class="custom-select-trigger">
+							<span id="langSelectValue">跟随系统</span>
+							<svg class="arrow-icon" viewBox="0 0 24 24">
+								<path d="M7 10l5 5 5-5z" />
+							</svg>
+						</div>
+						<div class="custom-select-options">
+							<div class="custom-option" data-value="system" data-i18n="optSystem">跟随系统</div>
+							<div class="custom-option" data-value="zh">简体中文</div>
+							<div class="custom-option" data-value="en">English</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 主题选择 -->
+				<div class="setting-item">
+					<div class="setting-text">
+						<div class="setting-name" data-i18n="lblTheme">主题</div>
+						<div class="setting-desc" data-i18n="descTheme">选择浅色或深色主题</div>
+					</div>
+					<div class="custom-select-wrapper" id="themeSelectWrapper" style="z-index: 10;">
+						<div class="custom-select-trigger">
+							<span id="themeSelectValue">跟随系统</span>
+							<svg class="arrow-icon" viewBox="0 0 24 24">
+								<path d="M7 10l5 5 5-5z" />
+							</svg>
+						</div>
+						<div class="custom-select-options">
+							<div class="custom-option" data-value="system" data-i18n="optSystem">跟随系统</div>
+							<div class="custom-option" data-value="light" data-i18n="optLight">浅色</div>
+							<div class="custom-option" data-value="dark" data-i18n="optDark">深色</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 胶囊样式滑动条 -->
+				<div class="setting-item column">
+					<div class="setting-text-row" style="margin-bottom: 12px;">
+						<div class="setting-name" data-i18n="lblOpacity">搜索栏不透明度</div>
+					</div>
+					<div class="slider-wrapper" id="opacitySliderWrapper" style="--value: 90%;">
+						<div class="slider-track"></div>
+						<input type="range" id="opacitySlider" min="20" max="100" value="90" class="md-slider">
+						<div class="slider-value-text filled-text" id="opacityValueFilled">90%</div>
+						<div class="slider-value-text empty-text" id="opacityValueEmpty">90%</div>
+					</div>
+				</div>
+
+				<!-- 壁纸设置 -->
+				<div class="setting-item no-border">
+					<div class="setting-text">
+						<div class="setting-name" data-i18n="lblWallpaper">背景图片</div>
+						<div class="setting-desc" data-i18n="descWallpaper">支持常见图片格式 (如 JPEG, PNG, WebP)</div>
+					</div>
+				</div>
+				<!-- 壁纸操作按钮 (2x2 Grid 布局) -->
+				<div class="wallpaper-actions">
+					<!-- 第一行：获取壁纸 (Bing) -->
+					<!-- 国内版：使用 image (山峰) 图标，代表单一/本地图片 -->
+					<button class="md-btn text" id="bgBingCN" title="获取 Bing 国内版今日壁纸">
+						<svg class="md-icon-small" viewBox="0 0 24 24">
+							<path
+								d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+						</svg>
+						<span data-i18n="btnBingCN">Bing 国内版壁纸</span>
+					</button>
+
+					<!-- 国际版：使用 public (地球) 图标，代表全球 -->
+					<button class="md-btn text" id="bgBingGlobal" title="获取 Bing 国际版今日壁纸">
+						<svg class="md-icon-small" viewBox="0 0 24 24">
+							<path
+								d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+						</svg>
+						<span data-i18n="btnBingGlobal">Bing 国际版壁纸</span>
+					</button>
+
+					<!-- 第二行：管理操作 (删除 & 上传) -->
+					<button class="md-btn tonal-danger" id="bgDelete">
+						<svg class="md-icon-small" viewBox="0 0 24 24">
+							<path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" />
+						</svg>
+						<span data-i18n="btnDelete">删除图片</span>
+					</button>
+					<label class="md-btn primary">
+						<svg class="md-icon-small" viewBox="0 0 24 24">
+							<path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
+						</svg>
+						<span data-i18n="btnUpload">上传图片</span>
+						<input type="file" id="bgUpload" accept="image/*" hidden>
+					</label>
+				</div>
+			</div>
+		</div>
+	</dialog>
+
+	<!-- 编辑/添加引擎的子模态框 -->
+	<dialog id="engineEditorDialog" class="sub-dialog">
+		<div class="dialog-header">
+			<h2 id="engineEditorTitle" data-i18n="titleAddEngine">添加搜索引擎</h2>
+		</div>
+		<div class="dialog-content no-scroll-padding">
+			<div class="input-group">
+				<label data-i18n="lblEngineName">名称</label>
+				<input type="text" id="editEngineName" class="md-input">
+			</div>
+			<div class="input-group">
+				<label data-i18n="lblEngineUrl">搜索 URL</label>
+				<input type="text" id="editEngineUrl" class="md-input">
+			</div>
+			<div class="input-group">
+				<label data-i18n="lblEngineApi">搜索建议源</label>
+				<div class="custom-select-wrapper full-width drop-up" id="editEngineApiWrapper">
+					<div class="custom-select-trigger">
+						<span id="editEngineApiValue">Google</span>
+						<svg class="arrow-icon" viewBox="0 0 24 24">
+							<path d="M7 10l5 5 5-5z" />
+						</svg>
+					</div>
+					<div class="custom-select-options">
+						<div class="custom-option" data-value="google">Google</div>
+						<div class="custom-option" data-value="bing">Bing</div>
+						<div class="custom-option" data-value="baidu">百度</div>
+						<div class="custom-option" data-value="duckduckgo">DuckDuckGo</div>
+						<div class="custom-option" data-value="yandex">Yandex</div>
+						<div class="custom-option" data-value="wikipedia">Wikipedia</div>
+						<div class="custom-option" data-value="none" data-i18n="optNone">无建议</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-actions">
+				<button class="md-btn text" id="cancelEditEngine" data-i18n="btnCancel">取消</button>
+				<button class="md-btn primary" id="saveEditEngine" data-i18n="btnSave">保存</button>
+			</div>
+		</div>
+	</dialog>
+</body>
+
+</html>
