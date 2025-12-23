@@ -114,12 +114,18 @@
 /* =========================================
    基础布局与背景
    ========================================= */
+html,
+body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	background-color: var(--md-sys-color-background);
 	color: var(--md-sys-color-on-background);
-	height: 100vh;
-	width: 100vw;
-	overflow: hidden;
 	position: relative;
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
