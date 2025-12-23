@@ -68,12 +68,13 @@
 	font-family: var(--font-family);
 }
 
-::-webkit-scrollbar {
+/* --- 强制应用自定义滚动条样式到所有元素 --- */
+*::-webkit-scrollbar {
 	width: 14px;
 	height: 14px;
 }
 
-::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
 	background: transparent;
 	margin-block: 4px;
 }
@@ -90,7 +91,7 @@
 	margin-block: 24px;
 }
 
-::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
 	background-color: var(--md-sys-color-outline-variant);
 	border-radius: 10px;
 	border: 4px solid transparent;
@@ -99,7 +100,8 @@
 	transition: background-color 0.2s, border 0.2s;
 }
 
-::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:active {
 	background-color: var(--md-sys-color-outline);
 	border-width: 3px;
 }
@@ -225,12 +227,10 @@ body {
 	background-color: var(--md-sys-color-surface-container-high);
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 	border-radius: 20px;
-	/* 统一 padding，视觉更平衡 */
 	padding: 14px 0 14px 14px;
 	display: none;
 	flex-direction: column;
 	gap: 2px;
-	/* 增加最大高度，容纳更多选项而不出现滚动条 */
 	max-height: 60vh;
 	overflow-y: auto;
 	scrollbar-gutter: stable;
@@ -281,7 +281,9 @@ body {
 }
 
 .engine-option:hover,
+.engine-option:active,
 .suggestion-item:hover,
+.suggestion-item:active,
 .engine-option.active,
 .suggestion-item.active {
 	background-color: var(--md-sys-color-surface-container-highest);
@@ -436,7 +438,8 @@ dialog.sub-dialog {
 	transition: background-color 0.2s, opacity 0.2s, transform 0.2s ease-out;
 }
 
-.engine-list-item:hover {
+.engine-list-item:hover,
+.engine-list-item:active {
 	background-color: var(--md-sys-color-surface-container-highest);
 }
 
@@ -462,8 +465,6 @@ dialog.sub-dialog {
 }
 
 .engine-list-item.fixed-item .engine-actions {
-	/* 拖动按钮 .drag-handle 有 margin-left: 4px */
-	/* 我们给这里加一点右边距，让 Edit 按钮视觉上位于拖动按钮的位置 */
 	margin-right: 4px;
 }
 
@@ -498,7 +499,8 @@ dialog.sub-dialog {
 	transition: opacity 0.2s;
 }
 
-.engine-list-item:hover .engine-actions {
+.engine-list-item:hover .engine-actions,
+.engine-list-item:active .engine-actions {
 	opacity: 1;
 }
 
@@ -549,7 +551,8 @@ label.md-btn {
 	color: var(--md-sys-color-on-primary);
 }
 
-.md-btn.primary:hover {
+.md-btn.primary:hover,
+.md-btn.primary:active {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 	filter: brightness(1.05);
 }
@@ -559,7 +562,8 @@ label.md-btn {
 	color: var(--md-sys-color-on-error-container);
 }
 
-.md-btn.tonal-danger:hover {
+.md-btn.tonal-danger:hover,
+.md-btn.tonal-danger:active {
 	background-color: color-mix(in srgb, var(--md-sys-color-error-container), white 10%);
 }
 
@@ -568,7 +572,8 @@ label.md-btn {
 	color: var(--md-sys-color-primary);
 }
 
-.md-btn.text:hover {
+.md-btn.text:hover,
+.md-btn.text:active {
 	background-color: color-mix(in srgb, var(--md-sys-color-primary), transparent 92%);
 }
 
@@ -597,7 +602,9 @@ label.md-btn {
 }
 
 .icon-btn-wrapper:hover,
-.icon-btn:hover {
+.icon-btn-wrapper:active,
+.icon-btn:hover,
+.icon-btn:active {
 	background-color: color-mix(in srgb, var(--md-sys-color-on-surface), transparent 92%);
 }
 
@@ -618,12 +625,14 @@ label.md-btn {
 	color: var(--md-sys-color-on-surface-variant);
 }
 
-.icon-btn.small:hover {
+.icon-btn.small:hover,
+.icon-btn.small:active {
 	background-color: var(--md-sys-color-outline-variant);
 	color: var(--md-sys-color-on-surface);
 }
 
-.icon-btn.small.delete-btn:hover {
+.icon-btn.small.delete-btn:hover,
+.icon-btn.small.delete-btn:active {
 	background-color: var(--md-sys-color-error-container);
 	color: var(--md-sys-color-on-error-container);
 }
@@ -834,7 +843,8 @@ label.md-btn {
 	min-width: 140px;
 }
 
-.custom-select-trigger:hover {
+.custom-select-trigger:hover,
+.custom-select-trigger:active {
 	background-color: var(--md-sys-color-surface-container-highest);
 }
 
@@ -886,7 +896,8 @@ label.md-btn {
 	transition: background-color 0.2s;
 }
 
-.custom-option:hover {
+.custom-option:hover,
+.custom-option:active {
 	background-color: color-mix(in srgb, var(--md-sys-color-on-surface), transparent 92%);
 }
 
@@ -904,6 +915,7 @@ label.md-btn {
 }
 
 .custom-select-wrapper.full-width:hover .custom-select-trigger,
+.custom-select-wrapper.full-width:active .custom-select-trigger,
 .custom-select-wrapper.full-width.open .custom-select-trigger {
 	border-color: var(--md-sys-color-on-surface-variant);
 }
@@ -921,7 +933,8 @@ label.md-btn {
 	border-radius: 16px;
 }
 
-.setting-action-row:hover {
+.setting-action-row:hover,
+.setting-action-row:active {
 	background-color: var(--md-sys-color-surface-container-highest);
 }
 
@@ -955,7 +968,8 @@ label.md-btn {
 	background-color: var(--md-sys-color-surface-container);
 }
 
-.wallpaper-actions .md-btn.text:hover {
+.wallpaper-actions .md-btn.text:hover,
+.wallpaper-actions .md-btn.text:active {
 	background-color: var(--md-sys-color-surface-container-highest);
 }
 
@@ -990,37 +1004,27 @@ label.md-btn {
    移动端响应式适配 (Mobile Responsiveness)
    ========================================= */
 @media screen and (max-width: 600px) {
-
-	/* 1. 壁纸设置按钮：由 "两列" 变为 "单列" */
-	/* 这样按钮会上下排列，拥有充足的宽度，不再溢出 */
 	.wallpaper-actions {
 		grid-template-columns: 1fr;
 		gap: 8px;
-		/* 稍微减小间距 */
 	}
 
-	/* 2. 允许按钮文字换行 */
-	/* 防止某些语言文字特别长时依然撑开容器 */
 	.wallpaper-actions .md-btn {
 		white-space: normal;
 		height: auto;
-		/* 高度自动适应文字 */
 		padding-top: 12px;
 		padding-bottom: 12px;
 	}
 
-	/* 3. 减小模态框内部边距 */
-	/* 手机寸土寸金，把原本较宽的边距收窄，让内容区更宽 */
 	.dialog-header {
 		padding: 16px 20px;
 	}
 
+	/* 20px左边距 - 14px滚动条宽度 = 6px右边距 */
 	.dialog-content {
-		/* 上 右 下 左 */
-		padding: 0 16px 20px 16px;
+		padding: 0 6px 20px 20px;
 	}
 
-	/* 针对不需要滚动的子弹窗也做调整 */
 	.dialog-content.no-scroll-padding {
 		padding: 0 20px 20px 20px;
 	}
