@@ -180,7 +180,7 @@ body {
 	align-items: center;
 	padding: 0 6px;
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-	transition: background-color 0.2s, box-shadow 0.2s, opacity 0.2s;
+	transition: background-color 0.2s, box-shadow 0.2s;
 }
 
 .search-bar-container:hover,
@@ -450,13 +450,15 @@ dialog.sub-dialog {
 	cursor: default;
 }
 
-.engine-list-item.fixed-item .drag-handle {
-	display: none;
-	/* 隐藏拖拽线条，保持简洁 */
-}
-
+.engine-list-item.fixed-item .drag-handle,
 .engine-list-item.fixed-item .delete-btn {
 	display: none;
+}
+
+.engine-list-item.fixed-item .engine-actions {
+	/* 拖动按钮 .drag-handle 有 margin-left: 4px */
+	/* 我们给这里加一点右边距，让 Edit 按钮视觉上位于拖动按钮的位置 */
+	margin-right: 4px;
 }
 
 .engine-list-info {
@@ -975,5 +977,45 @@ label.md-btn {
 	to {
 		opacity: 1;
 		transform: scale(1);
+	}
+}
+
+/* =========================================
+   移动端响应式适配 (Mobile Responsiveness)
+   ========================================= */
+@media screen and (max-width: 600px) {
+
+	/* 1. 壁纸设置按钮：由 "两列" 变为 "单列" */
+	/* 这样按钮会上下排列，拥有充足的宽度，不再溢出 */
+	.wallpaper-actions {
+		grid-template-columns: 1fr;
+		gap: 8px;
+		/* 稍微减小间距 */
+	}
+
+	/* 2. 允许按钮文字换行 */
+	/* 防止某些语言文字特别长时依然撑开容器 */
+	.wallpaper-actions .md-btn {
+		white-space: normal;
+		height: auto;
+		/* 高度自动适应文字 */
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+
+	/* 3. 减小模态框内部边距 */
+	/* 手机寸土寸金，把原本较宽的边距收窄，让内容区更宽 */
+	.dialog-header {
+		padding: 16px 20px;
+	}
+
+	.dialog-content {
+		/* 上 右 下 左 */
+		padding: 0 16px 20px 16px;
+	}
+
+	/* 针对不需要滚动的子弹窗也做调整 */
+	.dialog-content.no-scroll-padding {
+		padding: 0 20px 20px 20px;
 	}
 }

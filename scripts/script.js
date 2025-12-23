@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const TRANSLATIONS = {
 		zh: {
-			pageTitle: "新标签页", settingsTitle: "设置", secEngine: "搜索引擎", btnAddEngine: "添加搜索引擎", secAppearance: "外观", lblLang: "语言", descLang: "界面显示语言", optSystem: "跟随系统", lblTheme: "主题", descTheme: "选择浅色或深色主题", optLight: "浅色", optDark: "深色", lblOpacity: "搜索栏不透明度", lblWallpaper: "背景图片", descWallpaper: "支持常见图片格式 (如 JPEG, PNG, WebP)", btnUpload: "上传图片", btnDelete: "删除图片", btnBingCN: "Bing 国内版壁纸", btnBingGlobal: "Bing 国际版壁纸", titleAddEngine: "添加搜索引擎", titleEditEngine: "编辑搜索引擎", lblEngineName: "名称", lblEngineUrl: "搜索 URL", lblEngineApi: "搜索建议源", optNone: "无建议", btnCancel: "取消", btnSave: "保存", engDefault: "浏览器默认", descDefaultEngine: "浏览器默认搜索引擎"
+			pageTitle: "新标签页", settingsTitle: "设置", secEngine: "搜索引擎", btnAddEngine: "添加搜索引擎", secAppearance: "外观", lblLang: "语言", descLang: "界面显示语言", optSystem: "跟随系统", lblTheme: "主题", descTheme: "浅色或深色主题", optLight: "浅色", optDark: "深色", lblOpacity: "搜索栏不透明度", lblWallpaper: "背景图片", descWallpaper: "支持常见图片格式 (如 JPEG, PNG, WebP)", btnUpload: "上传图片", btnDelete: "删除图片", btnBingCN: "Bing 国内版壁纸", btnBingGlobal: "Bing 国际版壁纸", titleAddEngine: "添加搜索引擎", titleEditEngine: "编辑搜索引擎", lblEngineName: "名称", lblEngineUrl: "搜索 URL", lblEngineApi: "搜索建议源", optNone: "无建议", btnCancel: "取消", btnSave: "保存", engDefault: "浏览器默认", descDefaultEngine: "浏览器默认搜索引擎"
 		},
 		en: {
-			pageTitle: "New Tab", settingsTitle: "Settings", secEngine: "Search Engines", btnAddEngine: "Add Search Engine", secAppearance: "Appearance", lblLang: "Language", descLang: "Interface language", optSystem: "System", lblTheme: "Theme", descTheme: "Choose a light or dark theme", optLight: "Light", optDark: "Dark", lblOpacity: "Search Bar Opacity", lblWallpaper: "Wallpaper", descWallpaper: "Supports common formats (e.g., JPEG, PNG, WebP)", btnUpload: "Upload Image", btnDelete: "Delete Image", btnBingCN: "Bing CN Wallpaper", btnBingGlobal: "Bing Global Wallpaper", titleAddEngine: "Add Engine", titleEditEngine: "Edit Engine", lblEngineName: "Name", lblEngineUrl: "Search URL", lblEngineApi: "Suggestion Source", optNone: "None", btnCancel: "Cancel", btnSave: "Save", engDefault: "Browser Default", descDefaultEngine: "Browser default search engine"
+			pageTitle: "New Tab", settingsTitle: "Settings", secEngine: "Search Engines", btnAddEngine: "Add Search Engine", secAppearance: "Appearance", lblLang: "Language", descLang: "Interface language", optSystem: "System", lblTheme: "Theme", descTheme: "Light or dark theme", optLight: "Light", optDark: "Dark", lblOpacity: "Search Bar Opacity", lblWallpaper: "Wallpaper", descWallpaper: "Supports common formats (e.g., JPEG, PNG, WebP)", btnUpload: "Upload Image", btnDelete: "Delete Image", btnBingCN: "Bing CN Wallpaper", btnBingGlobal: "Bing Global Wallpaper", titleAddEngine: "Add Engine", titleEditEngine: "Edit Engine", lblEngineName: "Name", lblEngineUrl: "Search URL", lblEngineApi: "Suggestion Source", optNone: "None", btnCancel: "Cancel", btnSave: "Save", engDefault: "Browser Default", descDefaultEngine: "Browser default search engine"
 		}
 	};
 	// 当搜索引擎图标加载失败时，使用此 SVG 作为回退
@@ -446,11 +446,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="setting-desc">${desc}</div>
                     </div>
                     <div class="engine-actions">
-                        <button class="icon-btn small edit-btn" title="编辑" data-action="edit">
-                            <svg class="md-icon" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
-                        </button>
+                        <!-- 修改点：将删除按钮移到了编辑按钮前面 -->
                         <button class="icon-btn small delete-btn" title="删除" data-action="delete" ${isOnlyOneEngine || isDefault ? 'disabled' : ''}>
                             <svg class="md-icon" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                        </button>
+                        <button class="icon-btn small edit-btn" title="编辑" data-action="edit">
+                            <svg class="md-icon" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
                         </button>
                     </div>
                     <div class="drag-handle">
@@ -458,10 +459,48 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>`;
 
 				if (!isDefault) {
+					// --- 桌面端鼠标拖拽 ---
 					item.addEventListener('dragstart', () => item.classList.add('dragging'));
 					item.addEventListener('dragend', () => {
 						item.classList.remove('dragging');
 						this.updateEngineOrderFromDOM();
+					});
+
+					// --- 移动端触摸拖拽 ---
+					item.addEventListener('touchstart', (e) => {
+						if (e.target.closest('.drag-handle')) {
+							e.preventDefault();
+							item.classList.add('dragging');
+						}
+					}, { passive: false });
+
+					item.addEventListener('touchmove', (e) => {
+						if (!item.classList.contains('dragging')) return;
+						e.preventDefault();
+						const touchY = e.touches[0].clientY;
+						const siblings = [...els.engineList.querySelectorAll('.engine-list-item:not(.dragging):not(.fixed-item)')];
+						const nextSibling = siblings.reduce((closest, child) => {
+							const box = child.getBoundingClientRect();
+							const offset = touchY - box.top - box.height / 2;
+							if (offset < 0 && offset > closest.offset) {
+								return { offset: offset, element: child };
+							} else {
+								return closest;
+							}
+						}, { offset: Number.NEGATIVE_INFINITY }).element;
+
+						if (nextSibling) {
+							els.engineList.insertBefore(item, nextSibling);
+						} else {
+							els.engineList.appendChild(item);
+						}
+					}, { passive: false });
+
+					item.addEventListener('touchend', () => {
+						if (item.classList.contains('dragging')) {
+							item.classList.remove('dragging');
+							this.updateEngineOrderFromDOM();
+						}
 					});
 				}
 
@@ -761,7 +800,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			els.cancelEditEngine.addEventListener('click', () => els.engineEditorDialog.close());
 			els.engineEditorDialog.addEventListener('click', e => { if (e.target === els.engineEditorDialog) els.engineEditorDialog.close(); });
 
-			els.opacitySlider.addEventListener('input', this.onOpacityChange);
+			els.opacitySlider.addEventListener('input', this.onOpacityInput);
+			els.opacitySlider.addEventListener('change', this.onOpacitySave);
+
 			els.bgUpload.addEventListener('change', uiManager.onBgUpload);
 			els.bgBingCN.addEventListener('click', () => uiManager.fetchBingWallpaper('zh-CN'));
 			els.bgBingGlobal.addEventListener('click', () => uiManager.fetchBingWallpaper('en-US'));
@@ -847,7 +888,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			const draggingItem = document.querySelector('.engine-list-item.dragging');
 			if (!draggingItem) return;
 
-			// 排除不可拖拽的默认引擎
 			const siblings = [...els.engineList.querySelectorAll('.engine-list-item:not(.dragging):not(.fixed-item)')];
 
 			const nextSibling = siblings.reduce((closest, child) => {
@@ -885,13 +925,18 @@ document.addEventListener('DOMContentLoaded', () => {
 			els.settingsDialog.showModal();
 			uiManager.updateSlider(config.opacity);
 		},
-		onOpacityChange(e) {
-			const val = e.target.value;
+
+		onOpacityInput(e) {
+			const val = Number(e.target.value);
 			config.opacity = val;
 			uiManager.updateSearchbarOpacity(val);
 			uiManager.updateSlider(val);
+		},
+
+		onOpacitySave() {
 			configManager.save();
 		},
+
 		onLangChange(value) { config.language = value; configManager.save(); uiManager.renderAll(); },
 		onThemeChange(value) { config.theme = value; configManager.save(); uiManager.renderAll(); },
 		onApiChange(value) { selectedEngineApi = value; uiManager.updateCustomSelect(els.editEngineApiWrapper, value); },
