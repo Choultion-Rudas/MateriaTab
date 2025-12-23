@@ -289,6 +289,11 @@ body {
 	background-color: var(--md-sys-color-surface-container-highest);
 }
 
+.engine-option:active,
+.suggestion-item:active {
+	transition: none;
+}
+
 .engine-option.selected {
 	background-color: var(--md-sys-color-secondary-container);
 	color: var(--md-sys-color-on-secondary-container);
@@ -443,6 +448,10 @@ dialog.sub-dialog {
 	background-color: var(--md-sys-color-surface-container-highest);
 }
 
+.engine-list-item:active {
+	transition: none;
+}
+
 .engine-list-item.selected {
 	background-color: var(--md-sys-color-secondary-container);
 }
@@ -585,6 +594,13 @@ label.md-btn {
 	cursor: not-allowed;
 }
 
+.md-btn:active,
+.md-btn.primary:active,
+.md-btn.tonal-danger:active,
+.md-btn.text:active {
+	transition: none;
+}
+
 .icon-btn-wrapper,
 .icon-btn {
 	display: inline-flex;
@@ -610,7 +626,7 @@ label.md-btn {
 
 .icon-btn-wrapper:active,
 .icon-btn:active {
-	background-color: color-mix(in srgb, var(--md-sys-color-on-surface), transparent 88%);
+	transition: none;
 }
 
 .close-dialog-btn {
@@ -936,6 +952,18 @@ label.md-btn {
 .setting-action-row:hover,
 .setting-action-row:active {
 	background-color: var(--md-sys-color-surface-container-highest);
+}
+
+.custom-option:active {
+	transition: none;
+}
+
+.custom-select-trigger:active {
+	transition: none;
+}
+
+.setting-action-row:active {
+	transition: none;
 }
 
 .action-icon-bg {
