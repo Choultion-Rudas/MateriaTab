@@ -74,6 +74,11 @@
 	height: 14px;
 }
 
+/* 隐藏滚动条的上下箭头按钮，确保在所有环境下样式统一 */
+*::-webkit-scrollbar-button {
+	display: none;
+}
+
 *::-webkit-scrollbar-track {
 	background: transparent;
 	margin-block: 4px;
@@ -106,6 +111,7 @@
 	border-width: 3px;
 }
 
+/* Firefox 滚动条样式 */
 @supports (-moz-appearance: none) {
 	* {
 		scrollbar-width: thin;
@@ -170,6 +176,8 @@ body {
 	position: relative;
 	width: var(--search-bar-width);
 	z-index: 10;
+	/* 将不透明度应用到父容器，以便子元素(下拉菜单)继承 */
+	transition: opacity 0.2s;
 }
 
 @media screen and (max-width: 650px) {
@@ -280,12 +288,15 @@ body {
 	gap: 16px;
 }
 
+/* 统一电脑端和移动端的点击/触摸反馈样式 */
 .engine-option:hover,
 .engine-option:active,
 .suggestion-item:hover,
 .suggestion-item:active,
 .engine-option.active,
-.suggestion-item.active {
+.suggestion-item.active,
+.engine-option.touch-active,
+.suggestion-item.touch-active {
 	background-color: var(--md-sys-color-surface-container-highest);
 }
 
@@ -444,7 +455,8 @@ dialog.sub-dialog {
 }
 
 .engine-list-item:hover,
-.engine-list-item:active {
+.engine-list-item:active,
+.engine-list-item.touch-active {
 	background-color: var(--md-sys-color-surface-container-highest);
 }
 
@@ -555,15 +567,16 @@ label.md-btn {
 	transition: background-color 0.2s, box-shadow 0.2s, filter 0.2s;
 }
 
+.md-btn.primary:hover,
+.md-btn.primary:active,
+.md-btn.primary.touch-active {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	filter: brightness(1.05);
+}
+
 .md-btn.primary {
 	background-color: var(--md-sys-color-primary);
 	color: var(--md-sys-color-on-primary);
-}
-
-.md-btn.primary:hover,
-.md-btn.primary:active {
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-	filter: brightness(1.05);
 }
 
 .md-btn.tonal-danger {
@@ -572,7 +585,8 @@ label.md-btn {
 }
 
 .md-btn.tonal-danger:hover,
-.md-btn.tonal-danger:active {
+.md-btn.tonal-danger:active,
+.md-btn.tonal-danger.touch-active {
 	background-color: color-mix(in srgb, var(--md-sys-color-error-container), white 10%);
 }
 
@@ -582,7 +596,8 @@ label.md-btn {
 }
 
 .md-btn.text:hover,
-.md-btn.text:active {
+.md-btn.text:active,
+.md-btn.text.touch-active {
 	background-color: color-mix(in srgb, var(--md-sys-color-primary), transparent 92%);
 }
 
@@ -620,7 +635,9 @@ label.md-btn {
 .icon-btn-wrapper:hover,
 .icon-btn-wrapper:active,
 .icon-btn:hover,
-.icon-btn:active {
+.icon-btn:active,
+.icon-btn-wrapper.touch-active,
+.icon-btn.touch-active {
 	background-color: color-mix(in srgb, var(--md-sys-color-on-surface), transparent 92%);
 }
 
@@ -642,13 +659,15 @@ label.md-btn {
 }
 
 .icon-btn.small:hover,
-.icon-btn.small:active {
+.icon-btn.small:active,
+.icon-btn.small.touch-active {
 	background-color: var(--md-sys-color-outline-variant);
 	color: var(--md-sys-color-on-surface);
 }
 
 .icon-btn.small.delete-btn:hover,
-.icon-btn.small.delete-btn:active {
+.icon-btn.small.delete-btn:active,
+.icon-btn.small.delete-btn.touch-active {
 	background-color: var(--md-sys-color-error-container);
 	color: var(--md-sys-color-on-error-container);
 }
@@ -860,7 +879,8 @@ label.md-btn {
 }
 
 .custom-select-trigger:hover,
-.custom-select-trigger:active {
+.custom-select-trigger:active,
+.custom-select-trigger.touch-active {
 	background-color: var(--md-sys-color-surface-container-highest);
 }
 
@@ -913,7 +933,8 @@ label.md-btn {
 }
 
 .custom-option:hover,
-.custom-option:active {
+.custom-option:active,
+.custom-option.touch-active {
 	background-color: color-mix(in srgb, var(--md-sys-color-on-surface), transparent 92%);
 }
 
@@ -950,7 +971,8 @@ label.md-btn {
 }
 
 .setting-action-row:hover,
-.setting-action-row:active {
+.setting-action-row:active,
+.setting-action-row.touch-active {
 	background-color: var(--md-sys-color-surface-container-highest);
 }
 
@@ -997,7 +1019,8 @@ label.md-btn {
 }
 
 .wallpaper-actions .md-btn.text:hover,
-.wallpaper-actions .md-btn.text:active {
+.wallpaper-actions .md-btn.text:active,
+.wallpaper-actions .md-btn.text.touch-active {
 	background-color: var(--md-sys-color-surface-container-highest);
 }
 
