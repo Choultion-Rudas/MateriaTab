@@ -10,7 +10,7 @@
     "https://www.baidu.com/*",
     "https://duckduckgo.com/*",
     "https://yandex.com/*",
-    "https://*.wikipedia.org/*"
+    "https://search.brave.com/*"
   ],
   "chrome_url_overrides": {
     "newtab": "index.html"

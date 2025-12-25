@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		{ id: 'baidu', name: '百度', url: 'https://www.baidu.com/s?wd=', icon: 'https://www.baidu.com/favicon.ico', api: 'baidu' },
 		{ id: 'duckduckgo', name: 'DuckDuckGo', url: 'https://duckduckgo.com/?q=', icon: 'https://duckduckgo.com/favicon.ico', api: 'duckduckgo' },
 		{ id: 'yandex', name: 'Yandex', url: 'https://yandex.com/search/?text=', icon: 'https://yandex.com/favicon.ico', api: 'yandex' },
-		{ id: 'wikipedia', name: 'Wikipedia', url: 'https://zh.wikipedia.org/wiki/', icon: 'https://zh.wikipedia.org/static/favicon/wikipedia.ico', api: 'wikipedia' }
+		{ id: 'brave', name: 'Brave', url: 'https://search.brave.com/search?q=', icon: 'https://brave.com/favicon.ico', api: 'brave' }
 	];
 
 	const TRANSLATIONS = {
@@ -859,17 +859,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			baidu: { url: q => `https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&wd=${q}`, parser: json => json.g?.map(item => item.q) || [] },
 			duckduckgo: { url: q => `https://duckduckgo.com/ac/?q=${q}&type=list`, parser: json => json[1] },
 			yandex: { url: q => `https://yandex.com/suggest/suggest-ya.cgi?part=${q}&v=4`, parser: json => json[1] },
-			wikipedia: {
-				url: (q, engineUrl) => {
-					let lang = 'zh';
-					try {
-						const match = new URL(engineUrl).hostname.match(/^([a-z]{2,3}(?:-[a-z]+)?)\.wikipedia\.org$/);
-						if (match && match[1]) lang = match[1];
-					} catch (e) { /* 忽略 URL 解析错误 */ }
-					return `https://${lang}.wikipedia.org/w/api.php?action=opensearch&format=json&search=${q}&origin=*`;
-				},
-				parser: json => json[1]
-			}
+			brave: { url: q => `https://search.brave.com/api/suggest?q=${q}`, parser: json => json[1] }
 		},
 
 		/**
