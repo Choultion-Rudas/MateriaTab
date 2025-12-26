@@ -19,13 +19,13 @@
 
 <br>
 
-[English](#-english) | [简体中文](#-简体中文)
+[English](#english) | [简体中文](#简体中文)
 
 </div>
 
 ---
 
-## 🎨 English
+## English
 
 **Materia Tab** is a simple, clean new tab page featuring Material Design 3. It focuses on providing a distraction-free browsing experience without tracking or unnecessary bloatware.
 
