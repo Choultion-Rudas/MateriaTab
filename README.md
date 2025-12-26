@@ -13,9 +13,6 @@
 
 <br>
 
-<!-- 建议：在这里放一张扩展的预览截图，比图标更有吸引力 -->
-<!-- <img src="screenshot.png" width="800" alt="Preview"> <br> -->
-
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 ![Version](https://img.shields.io/badge/version-0.1-green?style=flat-square)
 ![Platform](https://img.shields.io/badge/platform-Chromium%20%7C%20Firefox-333333?style=flat-square)
@@ -40,32 +37,35 @@
 
 ### 📥 Download & Install
 
+Select your platform to download or install:
+
 <div align="center">
-
-<!-- GitHub (Manual) -->
+    
+<!-- GitHub -->
 <a href="../../releases/latest">
-    <img src="https://img.shields.io/badge/GitHub-Download-181717?style=for-the-badge&logo=github&logoColor=white" height="40" alt="Download from GitHub" />
+    <img src="https://img.shields.io/badge/GitHub-Download-181717?style=for-the-badge&logo=github&logoColor=white" height="60" alt="Download from GitHub" />
 </a>
-<br><br>
-
+&nbsp;
 <!-- Edge -->
 <a href="#">
-    <img src="https://img.shields.io/badge/Microsoft%20Edge-Get-0078D7?style=for-the-badge&logo=microsoft-edge&logoColor=white" height="40" alt="Install from Edge" />
+    <img src="https://img.shields.io/badge/Edge-Install-0078D7?style=for-the-badge&logo=microsoftedge&logoColor=white" height="60" alt="Install from Edge" />
 </a>
 &nbsp;
 <!-- Firefox -->
 <a href="#">
-    <img src="https://img.shields.io/badge/Firefox-Get-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white" height="40" alt="Install from Firefox" />
+    <img src="https://img.shields.io/badge/Firefox-Install-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white" height="60" alt="Install from Firefox" />
 </a>
 &nbsp;
 <!-- Opera -->
 <a href="#">
-    <img src="https://img.shields.io/badge/Opera-Get-FF1B2D?style=for-the-badge&logo=opera&logoColor=white" height="40" alt="Install from Opera" />
+    <img src="https://img.shields.io/badge/Opera-Install-FF1B2D?style=for-the-badge&logo=opera&logoColor=white" height="60" alt="Install from Opera" />
 </a>
 
 </div>
 
-#### 🛠️ Manual Installation (GitHub)
+<br>
+
+#### 🛠️ Manual Installation Guide
 
 If you downloaded the zip file from GitHub above:
 
@@ -93,32 +93,35 @@ If you downloaded the zip file from GitHub above:
 
 ### 📥 下载与安装
 
+请选择您的平台进行下载或安装：
+
 <div align="center">
 
 <!-- GitHub -->
 <a href="../../releases/latest">
-    <img src="https://img.shields.io/badge/GitHub-下载-181717?style=for-the-badge&logo=github&logoColor=white" height="40" alt="从 GitHub 下载" />
+    <img src="https://img.shields.io/badge/GitHub-下载文件-181717?style=for-the-badge&logo=github&logoColor=white" height="60" alt="从 GitHub 下载" />
 </a>
-<br><br>
-
+&nbsp;
 <!-- Edge -->
 <a href="#">
-    <img src="https://img.shields.io/badge/Microsoft%20Edge-安装-0078D7?style=for-the-badge&logo=microsoft-edge&logoColor=white" height="40" alt="安装 Edge 插件" />
+    <img src="https://img.shields.io/badge/Edge-商店安装-0078D7?style=for-the-badge&logo=microsoftedge&logoColor=white" height="60" alt="安装 Edge 插件" />
 </a>
 &nbsp;
 <!-- Firefox -->
 <a href="#">
-    <img src="https://img.shields.io/badge/Firefox-安装-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white" height="40" alt="安装 Firefox 插件" />
+    <img src="https://img.shields.io/badge/Firefox-商店安装-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white" height="60" alt="安装 Firefox 插件" />
 </a>
 &nbsp;
 <!-- Opera -->
 <a href="#">
-    <img src="https://img.shields.io/badge/Opera-安装-FF1B2D?style=for-the-badge&logo=opera&logoColor=white" height="40" alt="安装 Opera 插件" />
+    <img src="https://img.shields.io/badge/Opera-商店安装-FF1B2D?style=for-the-badge&logo=opera&logoColor=white" height="60" alt="安装 Opera 插件" />
 </a>
 
 </div>
 
-#### 🛠️ 手动安装 (GitHub)
+<br>
+
+#### 🛠️ 手动安装指南
 
 如果您是从上方 GitHub 下载的压缩包：
 
