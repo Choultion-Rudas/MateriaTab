@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Materia Tab",
   "version": "0.1",
-  "description": "A simple, clean new tab page with Material Design 3.",
+  "description": "A simple, clean new tab page featuring Material Design 3.",
   "permissions": ["storage", "search"],
   "host_permissions": [
     "https://www.google.com/*",
