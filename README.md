@@ -139,7 +139,7 @@ If you downloaded the zip file from GitHub above:
 
 <div align="center">
 
-Released under the [MIT License](LICENSE).  
+Released under the [MIT License](LICENSE).
 Copyright © 2025 Choultion Rudas
 
 </div>
