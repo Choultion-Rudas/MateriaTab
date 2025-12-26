@@ -13,11 +13,10 @@
 
 <br>
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Version](https://img.shields.io/badge/Version-0.1-green.svg)
-![Chrome](https://img.shields.io/badge/Chrome-Supported-4285F4?logo=google-chrome&logoColor=white)
-![Firefox](https://img.shields.io/badge/Firefox-Supported-FF7139?logo=firefox-browser&logoColor=white)
-
+<!-- 放在 English/简体中文 上方 -->
+[![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
+![Version](https://img.shields.io/badge/version-0.1-green?style=flat-square)
+![Platform](https://img.shields.io/badge/platform-Chromium%20%7C%20Firefox-333333?style=flat-square)
 <br>
 
 [English](#-english) | [简体中文](#-简体中文)
@@ -38,22 +37,19 @@
 
 ### 📥 Download & Install
 
-#### 🛍️ Official Stores (Recommended)
+#### 🛍️ Official Stores
 
 <p align="center">
-    <!-- Microsoft Edge -->
     <a href="#">
-        <img src="https://img.shields.io/badge/Get%20it%20from-Microsoft%20Edge-0078D7?style=for-the-badge&logo=microsoft-edge&logoColor=white" height="42" alt="Get it from Microsoft Edge" />
+        <img src="https://img.shields.io/badge/Edge-Install-0078D7?style=flat-square&logo=microsoft-edge&logoColor=white" height="30" alt="Install from Edge" />
     </a>
     &nbsp;
-    <!-- Firefox -->
     <a href="#">
-        <img src="https://img.shields.io/badge/Get%20it%20from-Firefox%20Addons-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white" height="42" alt="Get it from Firefox Add-ons" />
+        <img src="https://img.shields.io/badge/Firefox-Install-FF7139?style=flat-square&logo=firefox-browser&logoColor=white" height="30" alt="Install from Firefox" />
     </a>
     &nbsp;
-    <!-- Opera -->
     <a href="#">
-        <img src="https://img.shields.io/badge/Get%20it%20from-Opera%20Addons-FF1B2D?style=for-the-badge&logo=opera&logoColor=white" height="42" alt="Get it from Opera Add-ons" />
+        <img src="https://img.shields.io/badge/Opera-Install-FF1B2D?style=flat-square&logo=opera&logoColor=white" height="30" alt="Install from Opera" />
     </a>
 </p>
 
@@ -95,22 +91,19 @@ If you prefer, you can install the latest version manually from GitHub.
 
 ### 📥 下载与安装
 
-#### 🛍️ 应用商店 (推荐)
+#### 🛍️ 应用商店
 
 <p align="center">
-    <!-- Microsoft Edge -->
     <a href="#">
-        <img src="https://img.shields.io/badge/获取插件-Microsoft%20Edge-0078D7?style=for-the-badge&logo=microsoft-edge&logoColor=white" height="42" alt="Get it from Microsoft Edge" />
+        <img src="https://img.shields.io/badge/Edge-安装-0078D7?style=flat-square&logo=microsoft-edge&logoColor=white" height="30" alt="安装 Edge 插件" />
     </a>
     &nbsp;
-    <!-- Firefox -->
     <a href="#">
-        <img src="https://img.shields.io/badge/获取插件-Firefox%20Addons-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white" height="42" alt="Get it from Firefox Add-ons" />
+        <img src="https://img.shields.io/badge/Firefox-安装-FF7139?style=flat-square&logo=firefox-browser&logoColor=white" height="30" alt="安装 Firefox 插件" />
     </a>
     &nbsp;
-    <!-- Opera -->
     <a href="#">
-        <img src="https://img.shields.io/badge/获取插件-Opera%20Addons-FF1B2D?style=for-the-badge&logo=opera&logoColor=white" height="42" alt="Get it from Opera Add-ons" />
+        <img src="https://img.shields.io/badge/Opera-安装-FF1B2D?style=flat-square&logo=opera&logoColor=white" height="30" alt="安装 Opera 插件" />
     </a>
 </p>
 
