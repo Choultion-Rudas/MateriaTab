@@ -1,6 +1,9 @@
 <h1 align="center">
   <br>
-  <img src="favicon/icon.svg" width="120" alt="Materia Tab Icon">
+  <!-- 点击图标跳转到演示页面 -->
+  <a href="https://choultion-rudas.github.io/MateriaTab/">
+      <img src="favicon/icon.svg" width="120" alt="Materia Tab Icon">
+  </a>
   <br>
   Materia Tab
   <br>
@@ -10,12 +13,6 @@
 
 **A simple, clean new tab page featuring Material Design 3.**  
 **一款遵循 Material Design 3 设计规范的极简新标签页扩展。**
-
-<br>
-
-[![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
-![Version](https://img.shields.io/badge/version-0.1-green?style=flat-square)
-![Platform](https://img.shields.io/badge/platform-Chromium%20%7C%20Firefox-333333?style=flat-square)
 
 <br>
 
@@ -37,35 +34,29 @@
 
 ### 📥 Download & Install
 
-Select your platform to download or install:
+<p align="center">
+    <!-- GitHub -->
+    <a href="../../releases/latest">
+        <img src="https://github.com/user-attachments/assets/51048d6d-0b35-4f62-8351-4a3ea52d2213" alt="Download from GitHub" height="50" />
+    </a>
+    &nbsp;
+    <!-- Microsoft Edge -->
+    <a href="#">
+        <img src="https://microsoftedge.github.io/edge-addons-docs/images/Microsoft_Edge_Addons_Store_Badge_Dark.png" alt="Get it from Microsoft Edge Addons" height="50" />
+    </a>
+    &nbsp;
+    <!-- Firefox -->
+    <a href="#">
+        <img src="https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg" alt="Download from Mozilla Add-ons" height="50" />
+    </a>
+    &nbsp;
+    <!-- Opera -->
+    <a href="#">
+        <img src="https://addons.opera.com/static/images/badges/en/opera-add-ons-dark.png" alt="Add to Opera" height="50" />
+    </a>
+</p>
 
-<div align="center">
-    
-<!-- GitHub -->
-<a href="../../releases/latest">
-    <img src="https://img.shields.io/badge/GitHub-Download-181717?style=for-the-badge&logo=github&logoColor=white" height="60" alt="Download from GitHub" />
-</a>
-&nbsp;
-<!-- Edge -->
-<a href="#">
-    <img src="https://img.shields.io/badge/Edge-Install-0078D7?style=for-the-badge&logo=microsoftedge&logoColor=white" height="60" alt="Install from Edge" />
-</a>
-&nbsp;
-<!-- Firefox -->
-<a href="#">
-    <img src="https://img.shields.io/badge/Firefox-Install-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white" height="60" alt="Install from Firefox" />
-</a>
-&nbsp;
-<!-- Opera -->
-<a href="#">
-    <img src="https://img.shields.io/badge/Opera-Install-FF1B2D?style=for-the-badge&logo=opera&logoColor=white" height="60" alt="Install from Opera" />
-</a>
-
-</div>
-
-<br>
-
-#### 🛠️ Manual Installation Guide
+#### 🛠️ Manual Installation (GitHub)
 
 If you downloaded the zip file from GitHub above:
 
@@ -93,35 +84,29 @@ If you downloaded the zip file from GitHub above:
 
 ### 📥 下载与安装
 
-请选择您的平台进行下载或安装：
+<p align="center">
+    <!-- GitHub -->
+    <a href="../../releases/latest">
+        <img src="https://github.com/user-attachments/assets/51048d6d-0b35-4f62-8351-4a3ea52d2213" alt="从 GitHub 下载" height="50" />
+    </a>
+    &nbsp;
+    <!-- Microsoft Edge -->
+    <a href="#">
+        <img src="https://microsoftedge.github.io/edge-addons-docs/images/Microsoft_Edge_Addons_Store_Badge_Dark.png" alt="从 Edge 商店获取" height="50" />
+    </a>
+    &nbsp;
+    <!-- Firefox -->
+    <a href="#">
+        <img src="https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg" alt="安装 Firefox 插件" height="50" />
+    </a>
+    &nbsp;
+    <!-- Opera -->
+    <a href="#">
+        <img src="https://addons.opera.com/static/images/badges/en/opera-add-ons-dark.png" alt="安装 Opera 插件" height="50" />
+    </a>
+</p>
 
-<div align="center">
-
-<!-- GitHub -->
-<a href="../../releases/latest">
-    <img src="https://img.shields.io/badge/GitHub-下载文件-181717?style=for-the-badge&logo=github&logoColor=white" height="60" alt="从 GitHub 下载" />
-</a>
-&nbsp;
-<!-- Edge -->
-<a href="#">
-    <img src="https://img.shields.io/badge/Edge-商店安装-0078D7?style=for-the-badge&logo=microsoftedge&logoColor=white" height="60" alt="安装 Edge 插件" />
-</a>
-&nbsp;
-<!-- Firefox -->
-<a href="#">
-    <img src="https://img.shields.io/badge/Firefox-商店安装-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white" height="60" alt="安装 Firefox 插件" />
-</a>
-&nbsp;
-<!-- Opera -->
-<a href="#">
-    <img src="https://img.shields.io/badge/Opera-商店安装-FF1B2D?style=for-the-badge&logo=opera&logoColor=white" height="60" alt="安装 Opera 插件" />
-</a>
-
-</div>
-
-<br>
-
-#### 🛠️ 手动安装指南
+#### 🛠️ 手动安装 (GitHub)
 
 如果您是从上方 GitHub 下载的压缩包：
 
@@ -139,7 +124,7 @@ If you downloaded the zip file from GitHub above:
 
 <div align="center">
 
-Released under the [MIT License](LICENSE).
+Released under the [MIT License](LICENSE).  
 Copyright © 2025 Choultion Rudas
 
 </div>
