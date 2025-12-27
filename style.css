@@ -1,6 +1,3 @@
-/* 引入 Google Sans 字体 */
-@import url('https://fonts.cdnfonts.com/css/google-sans');
-
 /* =========================================
    :root - MD3 颜色变量与基础设定
    ========================================= */
@@ -15,7 +12,7 @@
 	--md-sys-color-error: #F2B8B5;
 	--md-sys-color-error-container: #8C1D18;
 	--md-sys-color-on-error-container: #F9DEDC;
-	--md-sys-color-background: #1A1C1E;
+	--md-sys-color-background: #001324;
 	--md-sys-color-on-background: #E2E2E6;
 	--md-sys-color-surface: #1A1C1E;
 	--md-sys-color-on-surface: #E2E2E6;
@@ -45,7 +42,7 @@
 	--md-sys-color-error: #B3261E;
 	--md-sys-color-error-container: #F9DEDC;
 	--md-sys-color-on-error-container: #410E0B;
-	--md-sys-color-background: #FCFCFF;
+	--md-sys-color-background: #F0F4F9;
 	--md-sys-color-on-background: #1A1C1E;
 	--md-sys-color-surface: #FCFCFF;
 	--md-sys-color-surface-container: #EDF2FA;
@@ -199,10 +196,20 @@ body {
 	transition: background-color 0.2s, box-shadow 0.2s;
 }
 
+body.has-wallpaper .search-bar-container {
+	box-shadow: none;
+}
+
 .search-bar-container:hover,
 .search-bar-container:focus-within {
 	background-color: var(--md-sys-color-surface-container-high);
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body.has-wallpaper .search-bar-container:hover,
+body.has-wallpaper .search-bar-container:focus-within {
+	background-color: var(--md-sys-color-surface-container-high);
+	box-shadow: none;
 }
 
 #searchForm {
@@ -244,6 +251,11 @@ body {
 	scrollbar-gutter: stable;
 	transform-origin: top center;
 	animation: menuIn 0.2s cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+body.has-wallpaper .engine-dropdown,
+body.has-wallpaper .search-suggestions {
+	box-shadow: none;
 }
 
 .engine-dropdown {
@@ -340,6 +352,10 @@ dialog {
 	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 	overflow: hidden;
 	outline: none;
+}
+
+body.has-wallpaper dialog {
+	box-shadow: none;
 }
 
 dialog[open] {
@@ -539,6 +555,19 @@ dialog.sub-dialog {
 
 .drag-handle:active {
 	cursor: grabbing;
+}
+
+/* 移动端禁用的列表项 */
+.engine-list-item.disabled-item {
+	opacity: 0.5;
+	pointer-events: none;
+	background-color: transparent;
+	filter: grayscale(1);
+}
+
+.engine-list-item.disabled-item:hover,
+.engine-list-item.disabled-item:active {
+	background-color: transparent;
 }
 
 /* =========================================

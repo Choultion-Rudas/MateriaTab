@@ -1,9 +1,3 @@
-/**
- * @file M3 New Tab Page Script
- * @description 处理新标签页的所有逻辑，包括设置、搜索、UI渲染和壁纸管理。
- * @version 1.4.0
- */
-
 document.addEventListener('DOMContentLoaded', () => {
 	'use strict';
 
@@ -24,10 +18,90 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const TRANSLATIONS = {
 		zh: {
-			pageTitle: "新标签页", settingsTitle: "设置", secEngine: "搜索引擎", btnAddEngine: "添加搜索引擎", secAppearance: "外观", lblLang: "语言", descLang: "界面显示语言", optSystem: "跟随系统", lblTheme: "主题", descTheme: "浅色或深色主题", optLight: "浅色", optDark: "深色", lblOpacity: "搜索栏不透明度", lblWallpaper: "背景图片", descWallpaper: "支持常见图片格式 (如 JPEG, PNG, WebP)", btnUpload: "上传图片", btnDelete: "删除图片", btnBingCN: "Bing 国内版壁纸", btnBingGlobal: "Bing 国际版壁纸", titleAddEngine: "添加搜索引擎", titleEditEngine: "编辑搜索引擎", lblEngineName: "名称", lblEngineUrl: "搜索 URL", lblEngineApi: "搜索建议源", optNone: "无建议", btnCancel: "取消", btnSave: "保存", engDefault: "浏览器默认", descDefaultEngine: "浏览器默认搜索引擎"
+			pageTitle: "新标签页",
+			settingsTitle: "设置",
+			secEngine: "搜索引擎",
+			btnAddEngine: "添加搜索引擎",
+			secAppearance: "外观",
+			lblLang: "语言",
+			descLang: "界面显示语言",
+			optSystem: "跟随系统",
+			lblTheme: "主题",
+			descTheme: "浅色或深色主题",
+			optLight: "浅色",
+			optDark: "深色",
+			lblOpacity: "搜索栏不透明度",
+			lblWallpaper: "背景图片",
+			descWallpaper: "支持常见图片格式 (如 JPG, PNG, WebP)",
+			btnUpload: "上传图片",
+			btnDelete: "删除图片",
+			btnBingCN: "Bing 国内版壁纸",
+			btnBingGlobal: "Bing 国际版壁纸",
+			titleAddEngine: "添加搜索引擎",
+			titleEditEngine: "编辑搜索引擎",
+			lblEngineName: "名称",
+			lblEngineUrl: "搜索 URL",
+			lblEngineApi: "搜索建议源",
+			optNone: "无",
+			btnCancel: "取消",
+			btnSave: "保存",
+			engDefault: "浏览器默认",
+			descDefaultEngine: "浏览器默认搜索引擎",
+			msgBingFail: "无法连接到 Bing 壁纸服务器，请检查网络设置。",
+			msgIncomplete: "搜索引擎名称和 URL 不能为空。",
+			msgDelEngine: "确认要移除 \"%s\" 吗？",
+			msgDelWallpaper: "确定要移除当前背景图片吗？",
+			msgMobileDefaultDisabled: "移动端不支持浏览器默认搜索",
+			tipSwitchEngine: "切换搜索引擎",
+			tipSettings: "设置",
+			tipClose: "关闭",
+			tipDeleteEngine: "删除搜索引擎",
+			tipEditEngine: "编辑搜索引擎",
+			tipBingCN: "获取 Bing 国内版今日壁纸",
+			tipBingGlobal: "获取 Bing 国际版今日壁纸"
 		},
 		en: {
-			pageTitle: "New Tab", settingsTitle: "Settings", secEngine: "Search Engines", btnAddEngine: "Add Search Engine", secAppearance: "Appearance", lblLang: "Language", descLang: "Interface language", optSystem: "System", lblTheme: "Theme", descTheme: "Light or dark theme", optLight: "Light", optDark: "Dark", lblOpacity: "Search Bar Opacity", lblWallpaper: "Wallpaper", descWallpaper: "Supports common formats (e.g., JPEG, PNG, WebP)", btnUpload: "Upload Image", btnDelete: "Delete Image", btnBingCN: "Bing CN Wallpaper", btnBingGlobal: "Bing Global Wallpaper", titleAddEngine: "Add Engine", titleEditEngine: "Edit Engine", lblEngineName: "Name", lblEngineUrl: "Search URL", lblEngineApi: "Suggestion Source", optNone: "None", btnCancel: "Cancel", btnSave: "Save", engDefault: "Browser Default", descDefaultEngine: "Browser default search engine"
+			pageTitle: "New Tab",
+			settingsTitle: "Settings",
+			secEngine: "Search Engines",
+			btnAddEngine: "Add Search Engine",
+			secAppearance: "Appearance",
+			lblLang: "Language",
+			descLang: "Interface language",
+			optSystem: "System",
+			lblTheme: "Theme",
+			descTheme: "Light or dark theme",
+			optLight: "Light",
+			optDark: "Dark",
+			lblOpacity: "Search Bar Opacity",
+			lblWallpaper: "Wallpaper",
+			descWallpaper: "Supports common formats (e.g., JPG, PNG, WebP)",
+			btnUpload: "Upload Image",
+			btnDelete: "Delete Image",
+			btnBingCN: "Bing CN Wallpaper",
+			btnBingGlobal: "Bing Global Wallpaper",
+			titleAddEngine: "Add Engine",
+			titleEditEngine: "Edit Engine",
+			lblEngineName: "Name",
+			lblEngineUrl: "Search URL",
+			lblEngineApi: "Suggestion Source",
+			optNone: "None",
+			btnCancel: "Cancel",
+			btnSave: "Save",
+			engDefault: "Browser Default",
+			descDefaultEngine: "Browser default search engine",
+			msgBingFail: "Unable to connect to Bing wallpaper server, please check your network.",
+			msgIncomplete: "Engine name and URL cannot be empty.",
+			msgDelEngine: "Are you sure you want to remove \"%s\"?",
+			msgDelWallpaper: "Are you sure you want to remove the current wallpaper?",
+			msgMobileDefaultDisabled: "Browser default search is not supported on mobile",
+			tipSwitchEngine: "Switch search engine",
+			tipSettings: "Settings",
+			tipClose: "Close",
+			tipDeleteEngine: "Remove search engine",
+			tipEditEngine: "Edit search engine",
+			tipBingCN: "Fetch today's Bing CN wallpaper",
+			tipBingGlobal: "Fetch today's Bing global wallpaper"
 		}
 	};
 	// 当搜索引擎图标加载失败时，使用此 SVG 作为回退
@@ -74,6 +148,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		wallpaperOverlay: document.getElementById('wallpaper-overlay')
 	};
 
+	// 检测是否为移动端
+	const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 
 	// =================================================================================
 	// --- 模块 3: 应用状态管理 ---
@@ -86,6 +163,20 @@ document.addEventListener('DOMContentLoaded', () => {
 	let activeSuggestionIndex = -1; // 键盘导航选中的建议索引
 	let originalUserQuery = ''; // 用户在键盘导航前的原始输入
 
+	/**
+	 * 转义 HTML 字符串以防止 XSS 攻击。
+	 * @param {string} str - 需要转义的字符串。
+	 * @returns {string} 转义后的字符串。
+	 */
+	const escapeHtml = (str) => {
+		if (!str) return '';
+		return String(str)
+			.replace(/&/g, "&amp;")
+			.replace(/</g, "&lt;")
+			.replace(/>/g, "&gt;")
+			.replace(/"/g, "&quot;")
+			.replace(/'/g, "&#039;");
+	};
 
 	/**
 	 * @namespace configManager
@@ -94,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const configManager = {
 		defaultConfig: {
 			engines: JSON.parse(JSON.stringify(PRESET_ENGINES)), // 深拷贝预设引擎
-			currentEngineId: 'default', // 默认使用浏览器引擎
+			currentEngineId: 'bing', // 默认使用 Bing 搜索引擎
 			theme: 'system',
 			language: 'system',
 			opacity: 90,
@@ -107,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		 */
 		load() {
 			try {
-				const savedConfig = localStorage.getItem('m3_config');
+				const savedConfig = localStorage.getItem('materia_config');
 				const parsed = savedConfig ? JSON.parse(savedConfig) : {};
 				config = { ...this.defaultConfig, ...parsed };
 
@@ -122,6 +213,11 @@ document.addEventListener('DOMContentLoaded', () => {
 					config.engines.unshift(JSON.parse(JSON.stringify(PRESET_ENGINES[0])));
 				} else if (config.engines[0].id !== 'default') {
 					config.engines = [defaultEngine, ...config.engines.filter(e => e.id !== 'default')];
+				}
+
+				// 移动端强制检查：如果当前是 'default'，强制切到 'bing'
+				if (isMobile && config.currentEngineId === 'default') {
+					config.currentEngineId = 'bing';
 				}
 
 				// 确保不透明度值在有效范围内
@@ -140,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		 */
 		save() {
 			try {
-				localStorage.setItem('m3_config', JSON.stringify(config));
+				localStorage.setItem('materia_config', JSON.stringify(config));
 			} catch (error) {
 				console.error("保存配置失败:", error);
 			}
@@ -160,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	 * @description IndexedDB 的封装，用于高效存储和读取壁纸图片 (Blob)。
 	 */
 	const dbHelper = {
-		dbName: 'M3NewTabDB',
+		dbName: 'MateriaTabDB',
 		storeName: 'wallpapers',
 		db: null,
 
@@ -283,6 +379,12 @@ document.addEventListener('DOMContentLoaded', () => {
 				if (t[key]) el.textContent = t[key];
 			});
 
+			// 处理 tooltip 的国际化
+			document.querySelectorAll('[data-i18n-title]').forEach(el => {
+				const key = el.dataset.i18nTitle;
+				if (t[key]) el.title = t[key];
+			});
+
 			this.updateSelectTriggerText(els.langSelectWrapper);
 			this.updateSelectTriggerText(els.themeSelectWrapper);
 			this.updateSelectTriggerText(els.editEngineApiWrapper);
@@ -308,6 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 集中处理所有UI的渲染和更新逻辑。
 	// =================================================================================
 	const uiManager = {
+		lastWallpaperUrl: null,
 		/**
 		 * 渲染所有UI组件，通常在初始化或配置变更后调用。
 		 */
@@ -387,13 +490,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (!isSilent && btn) btn.disabled = true;
 
 			try {
-				const domain = 'https://www.bing.com';
+				const domain = region === 'zh-CN' ? 'https://cn.bing.com' : 'https://www.bing.com';
 				const jsonUrl = `${domain}/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=${region}`;
 
 				const controller = new AbortController();
 				const timeoutId = setTimeout(() => controller.abort(), 8000); // 8秒超时
 
-				const res = await fetch(jsonUrl, { signal: controller.signal });
+				const res = await fetch(jsonUrl, { signal: controller.signal, credentials: 'omit' });
 				clearTimeout(timeoutId);
 
 				if (!res.ok) throw new Error('Network error');
@@ -408,7 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					let blob;
 					try {
 						// 优先尝试下载 4K
-						const imgRes = await fetch(uhdUrl, { cache: 'no-cache' });
+						const imgRes = await fetch(uhdUrl, { cache: 'no-cache', credentials: 'omit' });
 						if (imgRes.ok) {
 							blob = await imgRes.blob();
 						} else {
@@ -417,7 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					} catch (e) {
 						// 4K 下载失败，回退到 1080P
 						console.log("UHD download failed, falling back to standard resolution.");
-						const fallbackRes = await fetch(fallbackUrl, { cache: 'no-cache' });
+						const fallbackRes = await fetch(fallbackUrl, { cache: 'no-cache', credentials: 'omit' });
 						if (!fallbackRes.ok) throw new Error('Image download failed');
 						blob = await fallbackRes.blob();
 					}
@@ -435,7 +538,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			} catch (e) {
 				console.warn("Bing 壁纸获取失败:", e);
 				if (!isSilent) {
-					alert('获取 Bing 壁纸失败。请检查网络或稍后再试。');
+					alert(localization.translate('msgBingFail'));
 				}
 			} finally {
 				if (!isSilent && btn) btn.disabled = false;
@@ -456,6 +559,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		renderEngineDropdown() {
 			const fragment = document.createDocumentFragment();
 			config.engines.forEach(eng => {
+				// 移动端跳过 'default' 引擎，不让选
+				if (isMobile && eng.id === 'default') return;
+
 				const isSelected = eng.id === config.currentEngineId;
 				const div = document.createElement('div');
 				div.className = `engine-option ${isSelected ? 'selected' : ''}`;
@@ -488,8 +594,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		 */
 		renderEngineSettingsList() {
 			const fragment = document.createDocumentFragment();
-			// 只要引擎列表大于1，删除按钮就可用（除了默认引擎）
-			const isDeleteDisabled = config.engines.length <= 1;
+			// 删除按钮禁用逻辑
+			// 规则：总数必须 > 1。如果是移动端，'default' 不算数
+			let validEngineCount = config.engines.length;
+			if (isMobile) {
+				if (config.engines.find(e => e.id === 'default')) validEngineCount--;
+			}
+			const isDeleteDisabled = validEngineCount <= 1;
 
 			config.engines.forEach((eng) => {
 				const isDefault = eng.id === 'default';
@@ -497,6 +608,10 @@ document.addEventListener('DOMContentLoaded', () => {
 				item.className = 'engine-list-item';
 				if (isDefault) {
 					item.classList.add('fixed-item');
+					if (isMobile) {
+						item.classList.add('disabled-item');
+						item.setAttribute('title', localization.translate('msgMobileDefaultDisabled'));
+					}
 				} else {
 					item.setAttribute('draggable', 'true');
 				}
@@ -505,8 +620,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				if (eng.id === config.currentEngineId) item.classList.add('selected');
 
-				const displayName = isDefault ? localization.translate('engDefault') : eng.name;
-				const desc = isDefault ? localization.translate('descDefaultEngine') : eng.url;
+				const displayName = escapeHtml(isDefault ? localization.translate('engDefault') : eng.name);
+				const desc = escapeHtml(isDefault ? localization.translate('descDefaultEngine') : eng.url);
 
 				item.innerHTML = `
                     <div class="engine-list-info">
@@ -514,10 +629,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="setting-desc">${desc}</div>
                     </div>
                     <div class="engine-actions">
-                        <button class="icon-btn small delete-btn" title="删除" data-action="delete" ${isDeleteDisabled || isDefault ? 'disabled' : ''}>
+                        <button class="icon-btn small delete-btn" title="${localization.translate('tipDeleteEngine')}" data-action="delete" ${isDeleteDisabled || isDefault ? 'disabled' : ''}>
                             <svg class="md-icon" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
                         </button>
-                        <button class="icon-btn small edit-btn" title="编辑" data-action="edit">
+                        <button class="icon-btn small edit-btn" title="${localization.translate('tipEditEngine')}" data-action="edit">
                             <svg class="md-icon" style="width:18px;height:18px" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
                         </button>
                     </div>
@@ -600,12 +715,18 @@ document.addEventListener('DOMContentLoaded', () => {
 			const engine = config.engines.find(e => e.id === engineId);
 			if (!engine) return;
 
+			// 移动端点击 'default' 不响应
+			if (isMobile && engineId === 'default') return;
+
 			const action = e.target.closest('[data-action]')?.dataset.action;
 
 			if (action === 'edit') {
 				this.openEngineEditor(engine);
 			} else if (action === 'delete') {
-				if (engineId !== 'default' && config.engines.length > 1) this.deleteEngine(engine);
+				let validEngineCount = config.engines.length;
+				if (isMobile && config.engines.find(e => e.id === 'default')) validEngineCount--;
+
+				if (engineId !== 'default' && validEngineCount > 1) this.deleteEngine(engine);
 			} else {
 				// 如果点击的不是按钮，则认为是选择该引擎
 				config.currentEngineId = engineId;
@@ -619,7 +740,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		 * @param {object} engineToDelete - 要删除的引擎对象。
 		 */
 		deleteEngine(engineToDelete) {
-			if (confirm(`确定要删除 “${engineToDelete.name}” 吗?`)) {
+			const msg = localization.translate('msgDelEngine').replace('%s', engineToDelete.name);
+			if (confirm(msg)) {
 				config.engines = config.engines.filter(e => e.id !== engineToDelete.id);
 				if (config.currentEngineId === engineToDelete.id) {
 					config.currentEngineId = config.engines[0]?.id;
@@ -665,6 +787,15 @@ document.addEventListener('DOMContentLoaded', () => {
 				clipPercent = Math.max(0, Math.min(100, clipPercent));
 				els.opacitySliderWrapper.style.setProperty('--text-clip', clipPercent + '%');
 			});
+
+			/**
+			 * 更新滑块的视觉效果，特别是两种颜色文本的裁剪位置。
+			 * - 使用 requestAnimationFrame (rAF) 是为了确保所有DOM元素的尺寸计算
+			 *   都发生在浏览器下一次重绘之前。这是一种性能优化，可以避免因连续
+			 *   读写DOM属性而导致的"布局抖动"(Layout Thrashing)。
+			 * - 核心逻辑是通过计算填充轨道的宽度与文本起始位置的交集，
+			 *   来动态设置填充色文本的 clip-path，从而实现平滑的颜色填充效果。
+			 */
 		},
 
 		/**
@@ -704,7 +835,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			const api = selectedEngineApi;
 
 			if (editingEngineId !== 'default' && (!name || !url)) {
-				alert('请完整填写名称和搜索 URL');
+				alert(localization.translate('msgIncomplete'));
 				return;
 			}
 
@@ -712,7 +843,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			let icon = '';
 			if (editingEngineId !== 'default') {
-				try { icon = new URL(url).origin + '/favicon.ico'; } catch (e) { console.warn("无法生成 favicon URL:", e) }
+				try {
+					const hostname = new URL(url).hostname;
+					icon = `https://icons.duckduckgo.com/ip3/${hostname}.ico`;
+				} catch (e) {
+					console.warn("无法生成 favicon URL:", e);
+				}
 			}
 
 			if (editingEngineId) { // 编辑模式
@@ -802,18 +938,28 @@ document.addEventListener('DOMContentLoaded', () => {
 			try {
 				const blob = await dbHelper.get();
 				if (blob) {
+					// 先释放旧的 URL
+					if (this.lastWallpaperUrl) {
+						URL.revokeObjectURL(this.lastWallpaperUrl);
+						this.lastWallpaperUrl = null;
+					}
 					const url = URL.createObjectURL(blob);
+					this.lastWallpaperUrl = url;
+
 					els.wallpaperLayer.style.backgroundImage = `url(${url})`;
 					els.wallpaperLayer.style.opacity = '1';
 					els.wallpaperOverlay.style.opacity = '1';
+					document.body.classList.add('has-wallpaper');// 有壁纸：给 body 添加 class
 				} else {
 					els.wallpaperLayer.style.opacity = '0';
 					els.wallpaperOverlay.style.opacity = '0';
+					document.body.classList.remove('has-wallpaper');// 无壁纸：移除 class
 				}
 			} catch (e) {
 				console.error("加载壁纸失败:", e);
 				els.wallpaperLayer.style.opacity = '0';
 				els.wallpaperOverlay.style.opacity = '0';
+				document.body.classList.remove('has-wallpaper');
 			}
 		},
 
@@ -836,12 +982,20 @@ document.addEventListener('DOMContentLoaded', () => {
 		 * 处理删除壁纸的事件。
 		 */
 		async onBgDelete() {
-			if (confirm(localization.translate('btnDelete') + ' ' + localization.translate('lblWallpaper') + '?')) {
+			if (confirm(localization.translate('msgDelWallpaper'))) {
 				await dbHelper.delete();
-				// 删除后重置源，防止自动更新逻辑再次拉取
 				config.bgSource = 'custom';
 				configManager.save();
-				await uiManager.loadWallpaper();
+				if (uiManager.lastWallpaperUrl) {
+					URL.revokeObjectURL(uiManager.lastWallpaperUrl);
+					uiManager.lastWallpaperUrl = null;
+				}
+				// 强制移除类名和清空样式
+				els.wallpaperLayer.style.backgroundImage = '';
+				els.wallpaperLayer.style.opacity = '0';
+				els.wallpaperOverlay.style.opacity = '0';
+				document.body.classList.remove('has-wallpaper');
+
 				uiManager.updateWallpaperButtonsState();
 			}
 		}
@@ -878,6 +1032,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				if (!response.ok) throw new Error(`HTTP 错误! 状态: ${response.status}`);
 				const data = await response.json();
 				const list = apiConfig.parser(data);
+				if (els.searchInput.value.trim() !== query) return;// 如果当前输入框的值与发起请求时的查询词不一致，说明数据已过期，丢弃结果
 				uiManager.showSuggestions(list);
 			} catch (error) {
 				console.error("搜索建议获取失败:", error);
@@ -1135,8 +1290,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			uiManager.renderAll();
 			await uiManager.loadWallpaper();
 			eventBinder.bindAll();
-
 			this.checkAutoUpdateWallpaper();
+			els.searchInput.focus();// 强制聚焦搜索框，提升用户体验
 		},
 
 		/**
@@ -1164,11 +1319,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			const engine = configManager.getCurrentEngine();
 
 			if (engine.id === 'default') {
+				// 移动端直接跳转 Bing（因为移动端浏览器不支持 search API）
+				if (isMobile) {
+					window.location.href = 'https://www.bing.com/search?q=' + encodeURIComponent(text);
+				}
 				// 优先使用 Firefox 的 browser.search API
-				if (typeof browser !== 'undefined' && browser.search && browser.search.search) {
+				else if (typeof browser !== 'undefined' && browser.search && browser.search.search) {
 					browser.search.search({ query: text });
 				}
-				// 其次是 Chrome/Edge 的 chrome.search API (需要在 manifest.json 中声明 "search" 权限)
+				// 其次是 Chrome/Edge 的 chrome.search API
 				else if (typeof chrome !== 'undefined' && chrome.search && chrome.search.query) {
 					chrome.search.query({ text: text, disposition: 'CURRENT_TAB' })
 						.catch(err => {
@@ -1177,7 +1336,6 @@ document.addEventListener('DOMContentLoaded', () => {
 						});
 				}
 				else {
-					// 作为备用方案，如果 API 不可用，则硬编码一个搜索引擎
 					console.warn("Browser search API not available. Falling back to Bing.");
 					window.location.href = 'https://www.bing.com/search?q=' + encodeURIComponent(text);
 				}
