@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <!-- 点击图标跳转到演示页面 -->
+  <!-- 图标已添加链接，点击可跳转 -->
   <a href="https://choultion-rudas.github.io/MateriaTab/">
       <img src="favicon/icon.svg" width="120" alt="Materia Tab Icon">
   </a>
@@ -34,29 +34,35 @@
 
 ### 📥 Download & Install
 
-<p align="center">
-    <!-- GitHub -->
-    <a href="../../releases/latest">
-        <img src="https://github.com/user-attachments/assets/51048d6d-0b35-4f62-8351-4a3ea52d2213" alt="Download from GitHub" height="50" />
-    </a>
-    &nbsp;
-    <!-- Microsoft Edge -->
-    <a href="#">
-        <img src="https://microsoftedge.github.io/edge-addons-docs/images/Microsoft_Edge_Addons_Store_Badge_Dark.png" alt="Get it from Microsoft Edge Addons" height="50" />
-    </a>
-    &nbsp;
-    <!-- Firefox -->
-    <a href="#">
-        <img src="https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg" alt="Download from Mozilla Add-ons" height="50" />
-    </a>
-    &nbsp;
-    <!-- Opera -->
-    <a href="#">
-        <img src="https://addons.opera.com/static/images/badges/en/opera-add-ons-dark.png" alt="Add to Opera" height="50" />
-    </a>
-</p>
+Select your platform to download or install:
 
-#### 🛠️ Manual Installation (GitHub)
+<div align="center">
+
+<!-- GitHub -->
+<a href="../../releases/latest">
+    <img src="https://img.shields.io/badge/GitHub-Download-181717?style=for-the-badge&logo=github" height="50" alt="Download from GitHub" />
+</a>
+&nbsp;
+<!-- Edge -->
+<a href="#">
+    <img src="https://custom-icon-badges.demolab.com/badge/Edge-Install-0078D7?style=for-the-badge&logo=microsoft-edge" height="50" alt="Install from Edge" />
+</a>
+&nbsp;
+<!-- Firefox -->
+<a href="#">
+    <img src="https://img.shields.io/badge/Firefox-Install-FF7139?style=for-the-badge&logo=firefox-browser" height="50" alt="Install from Firefox" />
+</a>
+&nbsp;
+<!-- Opera -->
+<a href="#">
+    <img src="https://img.shields.io/badge/Opera-Install-FF1B2D?style=for-the-badge&logo=opera" height="50" alt="Install from Opera" />
+</a>
+
+</div>
+
+<br>
+
+#### 🛠️ Manual Installation Guide
 
 If you downloaded the zip file from GitHub above:
 
@@ -84,29 +90,35 @@ If you downloaded the zip file from GitHub above:
 
 ### 📥 下载与安装
 
-<p align="center">
-    <!-- GitHub -->
-    <a href="../../releases/latest">
-        <img src="https://github.com/user-attachments/assets/51048d6d-0b35-4f62-8351-4a3ea52d2213" alt="从 GitHub 下载" height="50" />
-    </a>
-    &nbsp;
-    <!-- Microsoft Edge -->
-    <a href="#">
-        <img src="https://microsoftedge.github.io/edge-addons-docs/images/Microsoft_Edge_Addons_Store_Badge_Dark.png" alt="从 Edge 商店获取" height="50" />
-    </a>
-    &nbsp;
-    <!-- Firefox -->
-    <a href="#">
-        <img src="https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg" alt="安装 Firefox 插件" height="50" />
-    </a>
-    &nbsp;
-    <!-- Opera -->
-    <a href="#">
-        <img src="https://addons.opera.com/static/images/badges/en/opera-add-ons-dark.png" alt="安装 Opera 插件" height="50" />
-    </a>
-</p>
+请选择您的平台进行下载或安装：
 
-#### 🛠️ 手动安装 (GitHub)
+<div align="center">
+
+<!-- GitHub -->
+<a href="../../releases/latest">
+    <img src="https://img.shields.io/badge/GitHub-下载-181717?style=for-the-badge&logo=github" height="50" alt="从 GitHub 下载" />
+</a>
+&nbsp;
+<!-- Edge -->
+<a href="#">
+    <img src="https://custom-icon-badges.demolab.com/badge/Edge-安装-0078D7?style=for-the-badge&logo=microsoft-edge" height="50" alt="从 Edge 商店获取" />
+</a>
+&nbsp;
+<!-- Firefox -->
+<a href="#">
+    <img src="https://img.shields.io/badge/Firefox-安装-FF7139?style=for-the-badge&logo=firefox-browser" height="50" alt="安装 Firefox 插件" />
+</a>
+&nbsp;
+<!-- Opera -->
+<a href="#">
+    <img src="https://img.shields.io/badge/Opera-安装-FF1B2D?style=for-the-badge&logo=opera" height="50" alt="安装 Opera 插件" />
+</a>
+
+</div>
+
+<br>
+
+#### 🛠️ 手动安装指南
 
 如果您是从上方 GitHub 下载的压缩包：
 
