@@ -1,6 +1,5 @@
 <h1 align="center">
   <br>
-  <!-- 图标已添加链接，点击可跳转 -->
   <a href="https://choultion-rudas.github.io/MateriaTab/">
       <img src="favicon/icon.svg" width="120" alt="Materia Tab Icon">
   </a>
@@ -40,22 +39,22 @@ Select your platform to download or install:
 
 <!-- GitHub -->
 <a href="../../releases/latest">
-    <img src="https://img.shields.io/badge/GitHub-Download-181717?style=for-the-badge&logo=github" height="100" alt="Download from GitHub" />
+    <img src="https://img.shields.io/badge/GitHub-Download-181717?style=for-the-badge&logo=github" alt="Download from GitHub" />
 </a>
 &nbsp;
 <!-- Edge -->
 <a href="#">
-    <img src="https://custom-icon-badges.demolab.com/badge/Edge-Install-0078D7?style=for-the-badge&logo=microsoft-edge" height="100" alt="Install from Edge" />
+    <img src="https://custom-icon-badges.demolab.com/badge/Edge-Install-0078D7?style=for-the-badge&logo=microsoft-edge" alt="Install from Edge" />
 </a>
 &nbsp;
 <!-- Firefox -->
 <a href="#">
-    <img src="https://img.shields.io/badge/Firefox-Install-FF7139?style=for-the-badge&logo=firefox-browser" height="100" alt="Install from Firefox" />
+    <img src="https://img.shields.io/badge/Firefox-Install-FF7139?style=for-the-badge&logo=firefox-browser" alt="Install from Firefox" />
 </a>
 &nbsp;
 <!-- Opera -->
 <a href="#">
-    <img src="https://img.shields.io/badge/Opera-Install-FF1B2D?style=for-the-badge&logo=opera" height="100" alt="Install from Opera" />
+    <img src="https://img.shields.io/badge/Opera-Install-FF1B2D?style=for-the-badge&logo=opera" alt="Install from Opera" />
 </a>
 
 </div>
@@ -96,22 +95,22 @@ If you downloaded the zip file from GitHub above:
 
 <!-- GitHub -->
 <a href="../../releases/latest">
-    <img src="https://img.shields.io/badge/GitHub-下载-181717?style=for-the-badge&logo=github" height="100" alt="从 GitHub 下载" />
+    <img src="https://img.shields.io/badge/GitHub-下载-181717?style=for-the-badge&logo=github" alt="从 GitHub 下载" />
 </a>
 &nbsp;
 <!-- Edge -->
 <a href="#">
-    <img src="https://custom-icon-badges.demolab.com/badge/Edge-安装-0078D7?style=for-the-badge&logo=microsoft-edge" height="100" alt="从 Edge 商店获取" />
+    <img src="https://custom-icon-badges.demolab.com/badge/Edge-安装-0078D7?style=for-the-badge&logo=microsoft-edge" alt="从 Edge 商店获取" />
 </a>
 &nbsp;
 <!-- Firefox -->
 <a href="#">
-    <img src="https://img.shields.io/badge/Firefox-安装-FF7139?style=for-the-badge&logo=firefox-browser" height="100" alt="安装 Firefox 插件" />
+    <img src="https://img.shields.io/badge/Firefox-安装-FF7139?style=for-the-badge&logo=firefox-browser" alt="安装 Firefox 插件" />
 </a>
 &nbsp;
 <!-- Opera -->
 <a href="#">
-    <img src="https://img.shields.io/badge/Opera-安装-FF1B2D?style=for-the-badge&logo=opera" height="100" alt="安装 Opera 插件" />
+    <img src="https://img.shields.io/badge/Opera-安装-FF1B2D?style=for-the-badge&logo=opera" alt="安装 Opera 插件" />
 </a>
 
 </div>
