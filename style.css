@@ -236,7 +236,7 @@ body {
 .search-bar-container {
 	width: 100%;
 	height: var(--search-bar-height);
-	background-color: var(--md-sys-color-surface-container);
+	background-color: var(--md-sys-color-surface-container-high);
 	border-radius: var(--search-bar-radius);
 	display: flex;
 	align-items: center;
@@ -246,7 +246,7 @@ body {
 
 .search-bar-container:hover,
 .search-bar-container:focus-within {
-	background-color: var(--md-sys-color-surface-container-high);
+	background-color: var(--md-sys-color-surface-container);
 }
 
 #searchForm {
@@ -278,7 +278,7 @@ body {
 	position: absolute;
 	top: calc(100% + 6px);
 	left: 0;
-	background-color: var(--md-sys-color-surface-container-high);
+	background-color: var(--md-sys-color-surface-container);
 	border-radius: 20px;
 	padding: 14px 0 14px 14px;
 	display: none;
