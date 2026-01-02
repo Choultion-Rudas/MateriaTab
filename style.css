@@ -2,56 +2,105 @@
    :root - MD3 颜色变量与基础设定
    ========================================= */
 :root {
-	/* --- MD3 Blue Theme (Dark) - 默认深色主题 --- */
-	--md-sys-color-primary: #A8C7FA;
-	--md-sys-color-on-primary: #003355;
-	--md-sys-color-primary-container: #004A77;
-	--md-sys-color-on-primary-container: #D4E3FF;
-	--md-sys-color-secondary-container: #3E4759;
-	--md-sys-color-on-secondary-container: #DAE2F9;
-	--md-sys-color-error: #F2B8B5;
-	--md-sys-color-error-container: #8C1D18;
-	--md-sys-color-on-error-container: #F9DEDC;
-	--md-sys-color-background: #001324;
-	--md-sys-color-on-background: #E2E2E6;
-	--md-sys-color-surface: #1A1C1E;
-	--md-sys-color-on-surface: #E2E2E6;
-	--md-sys-color-surface-container: #1F2428;
-	--md-sys-color-surface-container-high: #292E33;
-	--md-sys-color-surface-container-highest: #34393E;
-	--md-sys-color-on-surface-variant: #C2C7CE;
-	--md-sys-color-outline: #8C9199;
-	--md-sys-color-outline-variant: #42474E;
+	/* --- MD3 蓝色主题 (浅色模式) --- */
+	/* 主色 */
+	--md-sys-color-primary: #36618E;
+	--md-sys-color-on-primary: #FFFFFF;
+	--md-sys-color-primary-container: #D1E4FF;
+	--md-sys-color-on-primary-container: #1A4975;
+
+	/* 次色 */
+	--md-sys-color-secondary: #535F70;
+	--md-sys-color-on-secondary: #FFFFFF;
+	--md-sys-color-secondary-container: #D7E3F8;
+	--md-sys-color-on-secondary-container: #3B4858;
+
+	/* 第三色 */
+	--md-sys-color-tertiary: #6B5778;
+	--md-sys-color-on-tertiary: #FFFFFF;
+	--md-sys-color-tertiary-container: #F3DAFF;
+	--md-sys-color-on-tertiary-container: #523F5F;
+
+	/* 错误色 */
+	--md-sys-color-error: #BA1A1A;
+	--md-sys-color-error-container: #FFDAD6;
+	--md-sys-color-on-error-container: #93000A;
+
+	/* 表面与背景 */
+	--md-sys-color-background: #D1E4FF;
+	--md-sys-color-on-background: #191C20;
+	--md-sys-color-surface: #F8F9FF;
+	--md-sys-color-on-surface: #191C20;
+
+	/* 表面容器 (用于卡片、弹窗背景) */
+	--md-sys-color-surface-container: #ECEEF4;
+	--md-sys-color-surface-container-high: #E6E8EE;
+	--md-sys-color-surface-container-highest: #E1E2E8;
+
+	/* 变体 */
+	--md-sys-color-surface-variant: #DFE2EB;
+	--md-sys-color-on-surface-variant: #43474E;
+	--md-sys-color-outline: #73777F;
+	--md-sys-color-outline-variant: #C3C6CF;
 
 	/* --- 基础设定 --- */
-	--font-family: 'Google Sans', 'Product Sans', sans-serif;
+	--font-family: 'Product Sans', 'Noto Sans SC', sans-serif;
 	--search-bar-width: 600px;
 	--search-bar-height: 52px;
 	--search-bar-radius: 26px;
 	--card-radius: 24px;
 }
 
-[data-theme="light"] {
-	/* --- MD3 Blue Theme (Light) - 浅色主题覆盖 --- */
-	--md-sys-color-primary: #0B61A4;
-	--md-sys-color-on-primary: #FFFFFF;
-	--md-sys-color-primary-container: #D4E3FF;
-	--md-sys-color-on-primary-container: #001D36;
-	--md-sys-color-secondary-container: #D4E3FF;
-	--md-sys-color-on-secondary-container: #001D36;
-	--md-sys-color-error: #B3261E;
-	--md-sys-color-error-container: #F9DEDC;
-	--md-sys-color-on-error-container: #410E0B;
-	--md-sys-color-background: #F0F4F9;
-	--md-sys-color-on-background: #1A1C1E;
-	--md-sys-color-surface: #FCFCFF;
-	--md-sys-color-surface-container: #EDF2FA;
-	--md-sys-color-surface-container-high: #E7ECF7;
-	--md-sys-color-surface-container-highest: #DEE3F2;
-	--md-sys-color-on-surface: #1A1C1E;
-	--md-sys-color-on-surface-variant: #42474E;
-	--md-sys-color-outline: #73777F;
-	--md-sys-color-outline-variant: #C2C7CE;
+[data-theme="dark"] {
+	/* --- MD3 蓝色主题 (深色模式) --- */
+	/* 主色 */
+	--md-sys-color-primary: #A0CAFD;
+	--md-sys-color-on-primary: #003258;
+	--md-sys-color-primary-container: #1A4975;
+	--md-sys-color-on-primary-container: #D1E4FF;
+
+	/* 次色 */
+	--md-sys-color-secondary: #BBC7DB;
+	--md-sys-color-on-secondary: #253140;
+	--md-sys-color-secondary-container: #3B4858;
+	--md-sys-color-on-secondary-container: #D7E3F8;
+
+	/* 第三色 */
+	--md-sys-color-tertiary: #D7BEE4;
+	--md-sys-color-on-tertiary: #3B2948;
+	--md-sys-color-tertiary-container: #523F5F;
+	--md-sys-color-on-tertiary-container: #F3DAFF;
+
+	/* 错误色 */
+	--md-sys-color-error: #FFB4AB;
+	--md-sys-color-error-container: #93000A;
+	--md-sys-color-on-error-container: #FFDAD6;
+
+	/* 表面与背景 */
+	--md-sys-color-background: #D1E4FF;
+	--md-sys-color-on-background: #E1E2E8;
+	--md-sys-color-surface: #111418;
+	--md-sys-color-on-surface: #E1E2E8;
+
+	/* 表面容器 */
+	--md-sys-color-surface-container: #1D2024;
+	--md-sys-color-surface-container-high: #272A2F;
+	--md-sys-color-surface-container-highest: #32353A;
+
+	/* 变体 */
+	--md-sys-color-surface-variant: #43474E;
+	--md-sys-color-on-surface-variant: #C3C6CF;
+	--md-sys-color-outline: #8D9199;
+	--md-sys-color-outline-variant: #43474E;
+}
+
+/* 强制所有表单元素继承 body 的字体 */
+button,
+input,
+textarea,
+select,
+.md-btn {
+	font-family: inherit;
 }
 
 /* =========================================
@@ -192,24 +241,12 @@ body {
 	display: flex;
 	align-items: center;
 	padding: 0 6px;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-	transition: background-color 0.2s, box-shadow 0.2s;
-}
-
-body.has-wallpaper .search-bar-container {
-	box-shadow: none;
+	transition: background-color 0.2s;
 }
 
 .search-bar-container:hover,
 .search-bar-container:focus-within {
 	background-color: var(--md-sys-color-surface-container-high);
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-body.has-wallpaper .search-bar-container:hover,
-body.has-wallpaper .search-bar-container:focus-within {
-	background-color: var(--md-sys-color-surface-container-high);
-	box-shadow: none;
 }
 
 #searchForm {
@@ -228,7 +265,9 @@ body.has-wallpaper .search-bar-container:focus-within {
 	font-size: 1.1rem;
 	color: var(--md-sys-color-on-surface);
 	padding: 0;
-	font-family: var(--font-family), "Microsoft YaHei", sans-serif;
+	line-height: 28px;
+	height: 28px;
+	font-family: 'Product Sans', 'Noto Sans SC', sans-serif;
 }
 
 /* =========================================
@@ -240,7 +279,6 @@ body.has-wallpaper .search-bar-container:focus-within {
 	top: calc(100% + 6px);
 	left: 0;
 	background-color: var(--md-sys-color-surface-container-high);
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 	border-radius: 20px;
 	padding: 14px 0 14px 14px;
 	display: none;
@@ -251,11 +289,6 @@ body.has-wallpaper .search-bar-container:focus-within {
 	scrollbar-gutter: stable;
 	transform-origin: top center;
 	animation: menuIn 0.2s cubic-bezier(0.2, 0, 0, 1) forwards;
-}
-
-body.has-wallpaper .engine-dropdown,
-body.has-wallpaper .search-suggestions {
-	box-shadow: none;
 }
 
 .engine-dropdown {
@@ -298,6 +331,16 @@ body.has-wallpaper .search-suggestions {
 
 .suggestion-item {
 	gap: 16px;
+}
+
+.engine-option span,
+.suggestion-item span,
+.setting-name,
+.setting-action-row span,
+.custom-select-trigger span,
+.md-btn span {
+	position: relative;
+	top: -1px;
 }
 
 /* 统一电脑端和移动端的点击/触摸反馈样式 */
@@ -349,13 +392,8 @@ dialog {
 	width: min(90%, 450px);
 	max-height: 85vh;
 	margin: auto;
-	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-	overflow: hidden;
+	overflow: hidden; 
 	outline: none;
-}
-
-body.has-wallpaper dialog {
-	box-shadow: none;
 }
 
 dialog[open] {
@@ -367,6 +405,7 @@ dialog::backdrop {
 	backdrop-filter: blur(5px);
 }
 
+/* 子弹窗样式 */
 dialog.sub-dialog {
 	width: min(90%, 360px);
 	z-index: 1002;
@@ -388,6 +427,7 @@ dialog.sub-dialog {
 	font-weight: 400;
 }
 
+/* 主设置页内容 */
 .dialog-content {
 	scrollbar-gutter: stable;
 	padding: 0 10px 24px 24px;
@@ -395,9 +435,12 @@ dialog.sub-dialog {
 	max-height: calc(85vh - 80px);
 }
 
+/* 子弹窗内容 (编辑引擎) */
 .dialog-content.no-scroll-padding {
-	padding: 0 24px 24px 24px;
-	overflow: visible;
+	scrollbar-gutter: stable;
+	padding: 0 10px 24px 24px;
+	overflow-y: auto;
+	max-height: calc(85vh - 80px);
 }
 
 .setting-section-title {
@@ -488,7 +531,6 @@ dialog.sub-dialog {
 	opacity: 0.5;
 	background-color: var(--md-sys-color-surface-container-highest);
 	transform: scale(1.02);
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* --- 特殊样式：不可拖拽的默认引擎 --- */
@@ -593,13 +635,12 @@ label.md-btn {
 	align-items: center;
 	justify-content: center;
 	gap: 8px;
-	transition: background-color 0.2s, box-shadow 0.2s, filter 0.2s;
+	transition: background-color 0.2s, filter 0.2s;
 }
 
 .md-btn.primary:hover,
 .md-btn.primary:active,
 .md-btn.primary.touch-active {
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 	filter: brightness(1.05);
 }
 
@@ -633,8 +674,6 @@ label.md-btn {
 .md-btn:disabled {
 	background-color: color-mix(in srgb, var(--md-sys-color-on-surface), transparent 88%);
 	color: color-mix(in srgb, var(--md-sys-color-on-surface), transparent 62%);
-	box-shadow: none;
-	filter: none;
 	cursor: not-allowed;
 }
 
@@ -724,11 +763,13 @@ label.md-btn {
 	background-color: var(--md-sys-color-surface-container);
 	border: 2px solid var(--md-sys-color-outline);
 	border-radius: 12px;
-	padding: 11px 16px;
+	padding: 9px 16px 9px 16px;
+	line-height: 24px;
 	color: var(--md-sys-color-on-surface);
 	font-size: 1rem;
 	outline: none;
 	transition: border-color 0.2s;
+	font-family: inherit;
 }
 
 .md-input:focus {
@@ -926,7 +967,6 @@ label.md-btn {
 	background-color: var(--md-sys-color-surface-container-highest);
 	border-radius: 12px;
 	padding: 6px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 	z-index: 100;
 	opacity: 0;
 	visibility: hidden;
@@ -942,8 +982,8 @@ label.md-btn {
 
 .custom-select-wrapper.drop-up .custom-select-options {
 	top: auto;
-	bottom: 100%;
-	margin-bottom: 6px;
+	bottom: -14px;
+	margin-bottom: 0;
 	transform: translateY(10px);
 }
 

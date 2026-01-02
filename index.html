@@ -11,6 +11,7 @@
 	<!-- 字体资源 -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
 
 	<!-- 预设搜索引擎预连接 (硬编码以提升冷启动速度) -->
@@ -213,7 +214,7 @@
 					<div class="custom-select-options">
 						<div class="custom-option" data-value="google">Google</div>
 						<div class="custom-option" data-value="bing">Bing</div>
-						<div class="custom-option" data-value="baidu">百度</div>
+						<div class="custom-option" data-value="baidu" data-i18n="apiBaidu">百度</div>
 						<div class="custom-option" data-value="duckduckgo">DuckDuckGo</div>
 						<div class="custom-option" data-value="yandex">Yandex</div>
 						<div class="custom-option" data-value="brave">Brave</div>
@@ -222,8 +223,8 @@
 				</div>
 			</div>
 			<div class="form-actions">
-				<button class="md-btn text" id="cancelEditEngine" data-i18n="btnCancel">取消</button>
-				<button class="md-btn primary" id="saveEditEngine" data-i18n="btnSave">保存</button>
+				<button class="md-btn text" id="cancelEditEngine"><span data-i18n="btnCancel">取消</span></button>
+				<button class="md-btn primary" id="saveEditEngine"><span data-i18n="btnSave">保存</span></button>
 			</div>
 		</div>
 	</dialog>

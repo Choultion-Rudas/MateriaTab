@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			optNone: "无",
 			btnCancel: "取消",
 			btnSave: "保存",
+			apiBaidu: "百度",
 			engDefault: "浏览器默认",
 			descDefaultEngine: "浏览器默认搜索引擎",
 			msgBingFail: "无法连接到 Bing 壁纸服务器，请检查网络设置。",
@@ -88,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			optNone: "None",
 			btnCancel: "Cancel",
 			btnSave: "Save",
+			apiBaidu: "Baidu",
 			engDefault: "Browser Default",
 			descDefaultEngine: "Browser default search engine",
 			msgBingFail: "Unable to connect to Bing wallpaper server, please check your network.",
@@ -185,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const configManager = {
 		defaultConfig: {
 			engines: JSON.parse(JSON.stringify(PRESET_ENGINES)), // 深拷贝预设引擎
-			currentEngineId: 'bing', // 默认使用 Bing 搜索引擎
+			currentEngineId: isMobile ? 'bing' : 'default', // 电脑端默认为 'default'，移动端默认为 'bing'
 			theme: 'system',
 			language: 'system',
 			opacity: 90,
@@ -215,9 +217,19 @@ document.addEventListener('DOMContentLoaded', () => {
 					config.engines = [defaultEngine, ...config.engines.filter(e => e.id !== 'default')];
 				}
 
-				// 移动端强制检查：如果当前是 'default'，强制切到 'bing'
+				// 移动端强制检查：如果当前是 'default'，需要切换到其他可用引擎
 				if (isMobile && config.currentEngineId === 'default') {
-					config.currentEngineId = 'bing';
+					// 优先尝试切换到 Bing
+					const hasBing = config.engines.some(e => e.id === 'bing');
+					if (hasBing) {
+						config.currentEngineId = 'bing';
+					} else {
+						// 如果 Bing 被删除了，则切换到列表中第一个非 default 的引擎
+						const fallbackEngine = config.engines.find(e => e.id !== 'default');
+						if (fallbackEngine) {
+							config.currentEngineId = fallbackEngine.id;
+						}
+					}
 				}
 
 				// 确保不透明度值在有效范围内
@@ -949,17 +961,14 @@ document.addEventListener('DOMContentLoaded', () => {
 					els.wallpaperLayer.style.backgroundImage = `url(${url})`;
 					els.wallpaperLayer.style.opacity = '1';
 					els.wallpaperOverlay.style.opacity = '1';
-					document.body.classList.add('has-wallpaper');// 有壁纸：给 body 添加 class
 				} else {
 					els.wallpaperLayer.style.opacity = '0';
 					els.wallpaperOverlay.style.opacity = '0';
-					document.body.classList.remove('has-wallpaper');// 无壁纸：移除 class
 				}
 			} catch (e) {
 				console.error("加载壁纸失败:", e);
 				els.wallpaperLayer.style.opacity = '0';
 				els.wallpaperOverlay.style.opacity = '0';
-				document.body.classList.remove('has-wallpaper');
 			}
 		},
 
@@ -982,6 +991,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		 * 处理删除壁纸的事件。
 		 */
 		async onBgDelete() {
+			if (!uiManager.lastWallpaperUrl) return;// 如果没有已加载的壁纸，则直接返回，不执行任何操作
 			if (confirm(localization.translate('msgDelWallpaper'))) {
 				await dbHelper.delete();
 				config.bgSource = 'custom';
@@ -994,7 +1004,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				els.wallpaperLayer.style.backgroundImage = '';
 				els.wallpaperLayer.style.opacity = '0';
 				els.wallpaperOverlay.style.opacity = '0';
-				document.body.classList.remove('has-wallpaper');
 
 				uiManager.updateWallpaperButtonsState();
 			}
