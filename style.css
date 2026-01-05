@@ -49,6 +49,7 @@
 	--search-bar-height: 52px;
 	--search-bar-radius: 26px;
 	--card-radius: 24px;
+	--ui-zoom-scale: 1;
 }
 
 [data-theme="dark"] {
@@ -92,6 +93,30 @@
 	--md-sys-color-on-surface-variant: #C3C6CF;
 	--md-sys-color-outline: #8D9199;
 	--md-sys-color-outline-variant: #43474E;
+}
+
+@media (min-width: 2150px) {
+	:root {
+		--ui-zoom-scale: 1.25;
+	}
+}
+
+@media (min-width: 3500px) {
+	:root {
+		--ui-zoom-scale: 2;
+	}
+}
+
+@media (min-width: 4800px) {
+	:root {
+		--ui-zoom-scale: 3;
+	}
+}
+
+@media (min-width: 7000px) {
+	:root {
+		--ui-zoom-scale: 4;
+	}
 }
 
 /* 强制所有表单元素继承 body 的字体 */
@@ -157,14 +182,6 @@ select,
 	border-width: 3px;
 }
 
-/* Firefox 滚动条样式 */
-@supports (-moz-appearance: none) {
-	* {
-		scrollbar-width: thin;
-		scrollbar-color: var(--md-sys-color-outline-variant) transparent;
-	}
-}
-
 /* =========================================
    基础布局与背景
    ========================================= */
@@ -178,6 +195,7 @@ body {
 }
 
 body {
+	zoom: var(--ui-zoom-scale);
 	background-color: var(--md-sys-color-background);
 	color: var(--md-sys-color-on-background);
 	position: relative;
@@ -390,9 +408,9 @@ dialog {
 	color: var(--md-sys-color-on-surface);
 	padding: 0;
 	width: min(90%, 450px);
-	max-height: 85vh;
+	max-height: calc(85vh / var(--ui-zoom-scale));
 	margin: auto;
-	overflow: hidden; 
+	overflow: hidden;
 	outline: none;
 }
 
@@ -432,7 +450,7 @@ dialog.sub-dialog {
 	scrollbar-gutter: stable;
 	padding: 0 10px 24px 24px;
 	overflow-y: auto;
-	max-height: calc(85vh - 80px);
+	max-height: calc(85vh / var(--ui-zoom-scale) - 80px);
 }
 
 /* 子弹窗内容 (编辑引擎) */
@@ -440,7 +458,7 @@ dialog.sub-dialog {
 	scrollbar-gutter: stable;
 	padding: 0 10px 24px 24px;
 	overflow-y: auto;
-	max-height: calc(85vh - 80px);
+	max-height: calc(85vh / var(--ui-zoom-scale) - 80px);
 }
 
 .setting-section-title {

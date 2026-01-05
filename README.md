@@ -11,12 +11,24 @@
 <div align="center">
 
 **A simple, clean new tab page featuring Material Design 3.**  
-**一款遵循 Material Design 3 设计规范的极简新标签页扩展。**
+**一款遵循 Material Design 3 的极简新标签页扩展。**
 
 <br>
 
 [English](#english) | [简体中文](#简体中文)
 
+</div>
+
+---
+
+<div align="center">
+
+<h3>📸 Preview / 预览</h3>
+<img src="images/screenshot-1.jpg" width="48%" alt="Screenshot 1" />
+<img src="images/screenshot-2.jpg" width="48%" alt="Screenshot 2" />
+<br>
+<img src="images/screenshot-3.jpg" width="48%" alt="Screenshot 3" />
+<img src="images/screenshot-4.jpg" width="48%" alt="Screenshot 4" />
 </div>
 
 ---
@@ -47,11 +59,6 @@ Select your platform to download or install:
     <img src="https://custom-icon-badges.demolab.com/badge/Edge-Install-0078D7?style=for-the-badge&logo=microsoft-edge" alt="Install from Edge" />
 </a>
 &nbsp;
-<!-- Firefox -->
-<a href="#">
-    <img src="https://img.shields.io/badge/Firefox-Install-FF7139?style=for-the-badge&logo=firefox-browser" alt="Install from Firefox" />
-</a>
-&nbsp;
 <!-- Opera -->
 <a href="#">
     <img src="https://img.shields.io/badge/Opera-Install-FF1B2D?style=for-the-badge&logo=opera" alt="Install from Opera" />
@@ -68,7 +75,7 @@ If you downloaded the zip file from GitHub above:
 <details>
 <summary><strong>Click to expand instructions</strong></summary>
 
-1.  Unzip the downloaded file (`MateriaTab-Chromium.zip` or `MateriaTab-Firefox.zip`).
+1.  Unzip the downloaded file (`MateriaTab.zip`).
 2.  Open your browser's extensions page (e.g., `chrome://extensions`).
 3.  Enable **Developer mode**.
 4.  Click **Load unpacked** and select the extracted folder.
@@ -79,7 +86,7 @@ If you downloaded the zip file from GitHub above:
 
 ## 简体中文
 
-**Materia Tab** 是一款遵循 Material Design 3 设计规范的极简新标签页扩展，旨在提供无干扰的浏览体验。
+**Materia Tab** 是一款遵循 Material Design 3 的极简新标签页扩展，旨在提供无干扰的浏览体验。
 
 ### ✨ 功能特性
 
@@ -103,11 +110,6 @@ If you downloaded the zip file from GitHub above:
     <img src="https://custom-icon-badges.demolab.com/badge/Edge-安装-0078D7?style=for-the-badge&logo=microsoft-edge" alt="从 Edge 商店获取" />
 </a>
 &nbsp;
-<!-- Firefox -->
-<a href="#">
-    <img src="https://img.shields.io/badge/Firefox-安装-FF7139?style=for-the-badge&logo=firefox-browser" alt="安装 Firefox 插件" />
-</a>
-&nbsp;
 <!-- Opera -->
 <a href="#">
     <img src="https://img.shields.io/badge/Opera-安装-FF1B2D?style=for-the-badge&logo=opera" alt="安装 Opera 插件" />
@@ -124,7 +126,7 @@ If you downloaded the zip file from GitHub above:
 <details>
 <summary><strong>点击展开详细步骤</strong></summary>
 
-1.  解压下载的 ZIP 文件（`MateriaTab-Chromium.zip` 或 `MateriaTab-Firefox.zip`）。
+1.  解压下载的 ZIP 文件（`MateriaTab.zip`）。
 2.  打开浏览器的扩展管理页面 (如 `chrome://extensions`)。
 3.  开启右上角的 **开发者模式 (Developer mode)**。
 4.  点击 **加载已解压的扩展程序 (Load unpacked)**，选择解压后的文件夹。
