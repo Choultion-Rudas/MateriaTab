@@ -55,7 +55,7 @@ Select your platform to download or install:
 </a>
 &nbsp;
 <!-- Edge -->
-<a href="#">
+<a href="https://microsoftedge.microsoft.com/addons/detail/materia-tab/nipedbmilgnglbggjfbckbendaimkcep">
     <img src="https://custom-icon-badges.demolab.com/badge/Edge-Install-0078D7?style=for-the-badge&logo=microsoft-edge" alt="Install from Edge" />
 </a>
 &nbsp;
@@ -106,7 +106,7 @@ If you downloaded the zip file from GitHub above:
 </a>
 &nbsp;
 <!-- Edge -->
-<a href="#">
+<a href="https://microsoftedge.microsoft.com/addons/detail/materia-tab/nipedbmilgnglbggjfbckbendaimkcep">
     <img src="https://custom-icon-badges.demolab.com/badge/Edge-安装-0078D7?style=for-the-badge&logo=microsoft-edge" alt="从 Edge 商店获取" />
 </a>
 &nbsp;
